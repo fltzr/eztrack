@@ -1,0 +1,36 @@
+html,
+body,
+#h {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+}
+
+body.awsui-dark-mode {
+  background-color: #0f1b2a;
+}
+
+body {
+  background-color: #ffff;
+}
+
+#root {
+  padding-top: 41px;
+}
+
+#h {
+  position: fixed;
+  top: 0;
+  height: auto !important;
+  z-index: 1002;
+}
+
+#c {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.divider {
+  border: 1px solid #e9ebed;
+}

@@ -1,13 +1,27 @@
-import { StrictMode } from 'react';
-import * as ReactDOM from 'react-dom/client';
+import { StrictMode, Suspense } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import { Loader } from './common/components/loader/index';
+import { router } from './common/router/routes';
 
-import App from './app/app';
+import '@cloudscape-design/global-styles/index.css';
+import './index.css';
+import './normalize.scss';
+import { Providers } from './app/providers';
+import { AuthWrapper } from './auth/auth-wrapper';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+const container: HTMLElement | null = document.querySelector('#c');
+
+if (container) {
+  createRoot(container).render(
+    <StrictMode>
+      <Suspense fallback={<Loader />}>
+        <AuthWrapper>
+          <Providers>
+            <RouterProvider router={router} fallbackElement={<Loader />} />
+          </Providers>
+        </AuthWrapper>
+      </Suspense>
+    </StrictMode>
+  );
+}

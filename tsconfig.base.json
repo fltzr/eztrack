@@ -14,7 +14,19 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    /* Paths */
+    "paths": {
+      "@/app/*": ["./apps/web/src/app/*"],
+      "@/features/*": ["./apps/web/src/features/*"],
+      "@/components/*": ["./apps/web/src/common/components/*"],
+      "@/hooks/*": ["./apps/web/src/common/hooks/*"],
+      "@/router/*": ["./apps/web/src/common/router/*"],
+      "@/stores/*": ["./apps/web/src/common/stores/*"],
+      "@/types/*": ["./apps/web/src/common/types/*"],
+      "@/utils/*": ["./apps/web/src/common/utils/*"],
+      "@/*": ["./apps/web"],
+      "@@/*": ["./*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

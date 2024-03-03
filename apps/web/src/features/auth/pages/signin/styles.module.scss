@@ -1,0 +1,23 @@
+.divider {
+  border: 1px solid #e9ebed;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.auth-alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-form {
+  > :first-child {
+    width: 340px;
+  }
+}

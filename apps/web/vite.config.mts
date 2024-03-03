@@ -1,6 +1,6 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
@@ -8,13 +8,21 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/apps/web',
 
   server: {
-    port: 4200,
-    host: 'localhost',
+    strictPort: true,
+    host: '0.0.0.0',
+    port: 4000,
+    proxy: {
+      '/api': {
+        target: 'http://192.168.1.155:3000',
+        changeOrigin: true,
+      },
+    },
+    open: false,
   },
 
   preview: {
-    port: 4300,
-    host: 'localhost',
+    port: 4000,
+    open: false,
   },
 
   plugins: [react(), nxViteTsPaths()],
@@ -29,6 +37,14 @@ export default defineConfig({
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
+    },
+    rollupOptions: {
+      output: {
+        experimentalMinChunkSize: 500,
+        entryFileNames: 'assets/public/[name].[hash].js',
+        chunkFileNames: 'assets/chunks/[name].[hash].js',
+        assetFileNames: 'assets/vendor/[name].[hash].[ext]',
+      },
     },
   },
 
