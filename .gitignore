@@ -1,5 +1,9 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Env vault
+.env*
+!.env.vault
+
 # compiled output
 dist
 tmp

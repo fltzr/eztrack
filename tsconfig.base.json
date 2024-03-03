@@ -14,18 +14,25 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    /* Paths */
     "paths": {
+      "@/*": ["./apps/web"],
       "@/app/*": ["./apps/web/src/app/*"],
-      "@/features/*": ["./apps/web/src/features/*"],
       "@/components/*": ["./apps/web/src/common/components/*"],
+      "@/features/*": ["./apps/web/src/features/*"],
       "@/hooks/*": ["./apps/web/src/common/hooks/*"],
       "@/router/*": ["./apps/web/src/common/router/*"],
       "@/stores/*": ["./apps/web/src/common/stores/*"],
       "@/types/*": ["./apps/web/src/common/types/*"],
       "@/utils/*": ["./apps/web/src/common/utils/*"],
-      "@/*": ["./apps/web"],
-      "@@/*": ["./*"]
+      "@@/*": ["./*"],
+      "@config": ["./apps/api/src/core/config"],
+      "@database/*": ["./apps/api/src/core/database/*"],
+      "@exceptions/*": ["./apps/api/src/core/exceptions/*"],
+      "@features/*": ["./apps/api/src/features/*"],
+      "@middleware/*": ["./apps/api/src/core/middleware/*"],
+      "@routes/*": ["./apps/api/src/routes/*"],
+      "@schemas/*": ["./apps/api/src/core/database/schema/*"],
+      "@utils/*": ["./apps/api/src/core/utils/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
