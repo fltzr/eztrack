@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 
 export const Providers = ({ children }: PropsWithChildren) => (
   <QueryClientProvider client={queryClient}>
-    <I18nProvider locale='en' messages={[messages]}>
+    <I18nProvider locale="en" messages={[messages]}>
       {children}
     </I18nProvider>
     <ReactQueryDevtools initialIsOpen={false} />

@@ -14,7 +14,7 @@ export const useAuthData = () => {
 
       return account;
     },
-    [account, setAccount]
+    [account, setAccount],
   );
 
   const signout = useCallback(() => {

@@ -38,7 +38,7 @@ export const users = pgTable(
       .notNull()
       .defaultNow(),
   },
-  table => ({
+  (table) => ({
     username_idx: index('username_idx').on(table.username),
   }),
 );

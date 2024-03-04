@@ -16,15 +16,15 @@ export const CourtreserveEventTable = ({
 }: CourtreserveEventTableProps) => (
   <ReusableTable<CourtreserveEvent>
     stickyHeader
-    variant='borderless'
-    localstorageKeyPrefix='Courtreserve-Events'
-    resource='event'
+    variant="borderless"
+    localstorageKeyPrefix="Courtreserve-Events"
+    resource="event"
     columnDefinitions={courtreserveEventDefinition}
     items={events}
     selectedItems={selectedItems}
     loading={loading}
-    loadingText='Loading resources...'
-    selectionType='multi'
+    loadingText="Loading resources..."
+    selectionType="multi"
     {...clickHandlers}
   />
 );

@@ -25,7 +25,7 @@ export const parseDateTimeFilter = (filter: string) => {
 
 const parseFilterToDateTime = (
   filter: string | undefined,
-  operator: string
+  operator: string,
 ): DateTimeState => {
   if (!filter) {
     return { date: '', time: '' };
@@ -88,10 +88,10 @@ export const DateTimeForm = ({
   }, [dateTime, onChange]);
 
   return (
-    <div className='date-time-form'>
-      <FormField description='Date' constraintText='Use YYYY/MM/DD format.'>
+    <div className="date-time-form">
+      <FormField description="Date" constraintText="Use YYYY/MM/DD format.">
         <DateInput
-          placeholder='YYYY/MM/DD'
+          placeholder="YYYY/MM/DD"
           value={dateTime.date ?? ''}
           onChange={(e) => {
             setDateTime((prev) => ({ ...prev, date: e.detail.value }));
@@ -99,10 +99,10 @@ export const DateTimeForm = ({
         />
       </FormField>
 
-      <FormField description='Time' constraintText='Use 24-hour format.'>
+      <FormField description="Time" constraintText="Use 24-hour format.">
         <TimeInput
-          format='hh:mm:ss'
-          placeholder='HH:mm:ss'
+          format="hh:mm:ss"
+          placeholder="HH:mm:ss"
           value={dateTime.time}
           onChange={(e) => {
             setDateTime((prev) => ({ ...prev, time: e.detail.value }));
@@ -112,7 +112,7 @@ export const DateTimeForm = ({
 
       <Calendar
         value={dateTime.date ?? ''}
-        locale='en-EN'
+        locale="en-EN"
         onChange={(e) => {
           setDateTime((prev) => ({ ...prev, date: e.detail.value }));
         }}

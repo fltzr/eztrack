@@ -2,7 +2,10 @@ import type { PropertyFilterProperty } from '@cloudscape-design/collection-hooks
 import type { CollectionPreferencesProps } from '@cloudscape-design/components';
 import { capitalize, isEmpty } from 'lodash-es';
 import type { TableProps } from '@cloudscape-design/components/table';
-import { DateTimeForm, formatDateTime } from '../components/table/common/table-date-time-form/index';
+import {
+  DateTimeForm,
+  formatDateTime,
+} from '../components/table/common/table-date-time-form/index';
 
 export type TableColumnWidth = { id: string; width: number };
 export type TableColumnDefinition<T> = Omit<
@@ -25,7 +28,9 @@ export const addWidthToColumnDefinitions = <T>({
   columnWidthsArray,
 }: AddWidthToColumnDefinitionsParams<T>): TableColumnDefinition<T>[] =>
   columnDefinitions.map((columnDefinition) => {
-    const column = columnWidthsArray.find((col) => col.id === columnDefinition.id);
+    const column = columnWidthsArray.find(
+      (col) => col.id === columnDefinition.id,
+    );
 
     return {
       ...columnDefinition,
@@ -70,7 +75,7 @@ export const createPageSizeOptions = (resource: string) => [
 ];
 
 export const createFilteringProperties = <T>(
-  columnDefinitions: TableColumnDefinition<T>[]
+  columnDefinitions: TableColumnDefinition<T>[],
 ): PropertyFilterProperty[] =>
   columnDefinitions.map((columnDefinition) => ({
     key: columnDefinition.id,
@@ -87,7 +92,7 @@ export const createFilteringProperties = <T>(
   }));
 
 export const createContentDisplayOptions = (
-  columnDefinitions: TableColumnDefinition<unknown>[]
+  columnDefinitions: TableColumnDefinition<unknown>[],
 ): CollectionPreferencesProps.ContentDisplayOption[] =>
   columnDefinitions.map((columnDefinition) => ({
     id: columnDefinition.id,
@@ -96,7 +101,7 @@ export const createContentDisplayOptions = (
   }));
 
 export const createDefaultPreferences = <T>(
-  columnDefinitions: TableColumnDefinition<T>[]
+  columnDefinitions: TableColumnDefinition<T>[],
 ): CollectionPreferencesProps.Preferences => ({
   pageSize: 10,
   contentDisplay: columnDefinitions.map((columnDefinition) => ({

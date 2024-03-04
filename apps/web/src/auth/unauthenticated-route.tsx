@@ -6,7 +6,7 @@ export const UnauthenticatedRoute = () => {
   const authenticated = Boolean(useAuthStore((s) => s.account));
 
   if (authenticated) {
-    return <Navigate replace to='/' state={{ from: location }} />;
+    return <Navigate replace to="/" state={{ from: location }} />;
   }
 
   return <Outlet />;

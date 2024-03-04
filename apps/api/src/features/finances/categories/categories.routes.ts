@@ -56,13 +56,13 @@ categoriesRoutes.get(
       const limit = parseInt(request.query.limit as string, 10) || 10;
 
       const searchFilteredCategories = search
-        ? financeCategories.filter(category =>
+        ? financeCategories.filter((category) =>
             category.label.toLowerCase().includes(search.toLowerCase()),
           )
         : financeCategories;
 
       const filteredCategories = searchFilteredCategories
-        .filter(category => category.id > cursor)
+        .filter((category) => category.id > cursor)
         .slice(0, limit);
 
       const nextCursor =

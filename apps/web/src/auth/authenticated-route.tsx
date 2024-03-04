@@ -5,7 +5,7 @@ export const AuthenticatedRoute = () => {
   const authenticated = Boolean(useAuthStore((s) => s.account));
 
   if (!authenticated) {
-    return <Navigate to='/signin' />;
+    return <Navigate to="/signin" />;
   }
 
   return <Outlet />;

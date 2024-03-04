@@ -25,14 +25,15 @@ export const FormSelect = <T extends FieldValues>({
       render={({ field }) => (
         <FormField
           label={props.label}
-          errorText={errors[props.name]?.message as string | undefined}>
+          errorText={errors[props.name]?.message as string | undefined}
+        >
           <Select
             {...field}
             {...props}
             options={options}
             selectedOption={
               options?.find(
-                (option: SelectProps.Option) => option.value === field.value
+                (option: SelectProps.Option) => option.value === field.value,
               ) ?? null
             }
             onChange={(event) => {

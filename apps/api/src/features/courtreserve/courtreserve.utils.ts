@@ -67,29 +67,29 @@ export const transformApiResponse = (
 export const filterEventsByEventType = (
   events: CourtreserveEventTransformed[],
   eventType: CourtreserveEventType,
-) => events?.filter(event => event.eventType === eventType);
+) => events?.filter((event) => event.eventType === eventType);
 
 export const filterEventsByEventName = (
   events: CourtreserveEventTransformed[],
   eventName: string,
-) => events?.filter(event => event.eventName === eventName);
+) => events?.filter((event) => event.eventName === eventName);
 
 export const filterEventsByEventId = (
   events: CourtreserveEventTransformed[],
   eventId: string,
-) => events?.filter(event => event.eventId === eventId);
+) => events?.filter((event) => event.eventId === eventId);
 
 export const filterEventsBySkillLevel = (
   events: CourtreserveEventTransformed[],
   skillLevel: string,
-) => events?.filter(event => event.title.includes(skillLevel));
+) => events?.filter((event) => event.title.includes(skillLevel));
 
 export const filterEventsByTimeDisplay = (
   events: CourtreserveEventTransformed[],
   timeDisplay: string,
-) => events?.filter(event => event.timeDisplay === timeDisplay);
+) => events?.filter((event) => event.timeDisplay === timeDisplay);
 
 export const filterEventsByDayOfWeek = (
   events: CourtreserveEventTransformed[],
   dayOfWeek: string,
-) => events?.filter(event => event.title.includes(dayOfWeek));
+) => events?.filter((event) => event.title.includes(dayOfWeek));

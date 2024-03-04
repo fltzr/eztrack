@@ -22,6 +22,6 @@ if (container) {
           </Providers>
         </AuthWrapper>
       </Suspense>
-    </StrictMode>
+    </StrictMode>,
   );
 }

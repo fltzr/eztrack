@@ -22,7 +22,7 @@ const Layout = ({ children }: PropsWithChildren) => {
       <Header />
       <AppLayout
         content={children}
-        headerSelector='#h'
+        headerSelector="#h"
         notifications={<Notification />}
         navigationWidth={250}
         navigationHide={account ? navigationHidden : true}

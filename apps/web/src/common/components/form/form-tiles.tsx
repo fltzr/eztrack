@@ -9,7 +9,9 @@ type FormTilesProps<T extends FieldValues> = Omit<
 > &
   FormBaseProps<T>;
 
-export const FormTiles = <T extends FieldValues>({ ...props }: FormTilesProps<T>) => {
+export const FormTiles = <T extends FieldValues>({
+  ...props
+}: FormTilesProps<T>) => {
   const {
     control,
     formState: { errors },
@@ -22,7 +24,8 @@ export const FormTiles = <T extends FieldValues>({ ...props }: FormTilesProps<T>
       render={({ field }) => (
         <FormField
           label={props.label}
-          errorText={errors[props.name]?.message as string | undefined}>
+          errorText={errors[props.name]?.message as string | undefined}
+        >
           <Tiles
             {...field}
             {...props}

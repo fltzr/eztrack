@@ -11,23 +11,26 @@ import connectPgSimple from 'connect-pg-simple';
 import { env } from './core/config/index';
 import { logger, stream } from './core/utils/winston-logger';
 import { initializeOpenIDConnectClient } from './core/utils/oidc-client';
-import { PostgresqlPool, initializeDrizzleInstance } from './core/database/drizzle';
+import {
+  PostgresqlPool,
+  initializeDrizzleInstance,
+} from './core/database/drizzle';
 import { router } from './features/routes';
 // import { notificationCron } from '@features/notifications/notification.service';
 
 export const delay = (ms: number) =>
-  new Promise(resolve => setTimeout(resolve, ms));
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 export const createApplicaton = async () => {
   const app = express();
 
   // Initialize OpenID Connect client
-  await initializeOpenIDConnectClient().catch(error =>
+  await initializeOpenIDConnectClient().catch((error) =>
     logger.error(`❌ Error while initializing OpenID Client: ${error} `),
   );
 
   // Initialize Drizzle instance
-  await initializeDrizzleInstance().catch(error => {
+  await initializeDrizzleInstance().catch((error) => {
     logger.error(`❌ Error while initializing Drizzle: ${error}`);
   });
 

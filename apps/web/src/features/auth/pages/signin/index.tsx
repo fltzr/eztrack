@@ -17,7 +17,7 @@ const SignInPage = () => {
   const navigate = useNavigate();
   const { signin } = useAuth();
   const addNotification = useNotificationStore(
-    (state) => state.addNotification
+    (state) => state.addNotification,
   );
 
   const handleSignin = async (data: SignInSchemaType) => {
@@ -47,36 +47,38 @@ const SignInPage = () => {
     <div className={styles.container}>
       <div className={styles['auth-form']}>
         <Container>
-          <SpaceBetween direction='vertical' size='xl'>
+          <SpaceBetween direction="vertical" size="xl">
             <GenericForm
-              header={<Header variant='h2'>Sign in</Header>}
-              variant='embedded'
-              formId='signin-form'
+              header={<Header variant="h2">Sign in</Header>}
+              variant="embedded"
+              formId="signin-form"
               schema={signInSchema}
-              onSubmit={handleSignin}>
+              onSubmit={handleSignin}
+            >
               <FormInput<SignInSchemaType>
                 disableBrowserAutocorrect
-                name='username'
-                label='Username'
+                name="username"
+                label="Username"
                 spellcheck={false}
                 autoComplete={false}
               />
               <FormInput<SignInSchemaType>
                 sensitive
                 disableBrowserAutocorrect
-                name='password'
-                label='Password'
-                type='password'
+                name="password"
+                label="Password"
+                type="password"
                 spellcheck={false}
                 autoComplete={false}
               />
             </GenericForm>
             <Button
               fullWidth
-              form='signin-form'
-              formAction='submit'
-              variant='primary'
-              loadingText='Signing in...'>
+              form="signin-form"
+              formAction="submit"
+              variant="primary"
+              loadingText="Signing in..."
+            >
               Log in
             </Button>
           </SpaceBetween>

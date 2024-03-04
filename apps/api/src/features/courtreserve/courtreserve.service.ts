@@ -13,13 +13,19 @@ import {
   transformApiResponse,
 } from './courtreserve.utils';
 import { DrizzleInstance } from '../../core/database/drizzle';
-import { courtreserveEventSubscriptions, InsertCourtreserveEventSubscription } from '../../core/database/schema/courtreserve-event-subscription';
+import {
+  courtreserveEventSubscriptions,
+  InsertCourtreserveEventSubscription,
+} from '../../core/database/schema/courtreserve-event-subscription';
 import { DateTime } from 'luxon';
 import { logger } from '../../core/utils/winston-logger';
 import { sendEmail } from '../../core/utils/node-mailer';
 import { users } from '../../core/database/schema/user';
 import { eq } from 'drizzle-orm';
-import { notifications, InsertNotification } from '../../core/database/schema/notification';
+import {
+  notifications,
+  InsertNotification,
+} from '../../core/database/schema/notification';
 
 export const fetchCourtreseveEvents = async (
   filters: {
@@ -151,9 +157,9 @@ export const fetchAndDispatchEventSubscriptions = async () => {
     `Fetched ${events.length} events and ${subscriptions.length} subscriptions`,
   );
 
-  events.forEach(event => {
+  events.forEach((event) => {
     // For each event, filter out subscriptions that match the event
-    const potentialEventNotifications = subscriptions.filter(sub => {
+    const potentialEventNotifications = subscriptions.filter((sub) => {
       logger.info(`Checking subscription ${sub.id} for event ${event.id}`);
       logger.info(sub.eventId === event.id);
 
@@ -161,7 +167,7 @@ export const fetchAndDispatchEventSubscriptions = async () => {
     });
 
     // For each subscription, send a notification if it matches the event
-    potentialEventNotifications.forEach(async subscription => {
+    potentialEventNotifications.forEach(async (subscription) => {
       const user = await db.query.users.findFirst({
         where: eq(users.id, subscription.userId),
       });
@@ -205,7 +211,7 @@ export const fetchAndDispatchEventSubscriptions = async () => {
               .where(eq(courtreserveEventSubscriptions.id, subscription.id))
               .execute();
           })
-          .catch(error => {
+          .catch((error) => {
             logger.error(`Error sending email: ${error}`);
             const notification: InsertNotification = {
               subscriptionId: subscription.id,
@@ -244,7 +250,7 @@ export const fetchAndDispatchEventSubscriptions = async () => {
 
             db.insert(notifications).values(notification).execute();
           })
-          .catch(error => {
+          .catch((error) => {
             const notification: InsertNotification = {
               subscriptionId: subscription.id,
               notificationType: 'registration_open',

@@ -12,7 +12,9 @@ type FormInputProps<T extends FieldValues> = Omit<
 > &
   FormBaseProps<T> & { sensitive?: boolean };
 
-export const FormInput = <T extends FieldValues>({ ...props }: FormInputProps<T>) => {
+export const FormInput = <T extends FieldValues>({
+  ...props
+}: FormInputProps<T>) => {
   const {
     control,
     formState: { errors },
@@ -28,9 +30,13 @@ export const FormInput = <T extends FieldValues>({ ...props }: FormInputProps<T>
         <FormField
           label={props.label}
           stretch={props.stretch}
-          errorText={errors[props.name]?.message as string | undefined}>
+          errorText={errors[props.name]?.message as string | undefined}
+        >
           {props.sensitive ? (
-            <Grid disableGutters gridDefinition={[{ colspan: 11 }, { colspan: 1 }]}>
+            <Grid
+              disableGutters
+              gridDefinition={[{ colspan: 11 }, { colspan: 1 }]}
+            >
               <Input
                 {...field}
                 {...props}
@@ -40,8 +46,8 @@ export const FormInput = <T extends FieldValues>({ ...props }: FormInputProps<T>
                 }}
               />
               <Button
-                variant='icon'
-                formAction='none'
+                variant="icon"
+                formAction="none"
                 iconName={isInputVisible ? 'lock-private' : 'unlocked'}
                 onClick={() => {
                   setIsInputVisible((prev) => !prev);

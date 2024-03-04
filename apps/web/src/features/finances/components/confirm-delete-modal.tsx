@@ -53,34 +53,37 @@ export const ConfirmDeleteModal = <T,>({
 
   return (
     <Modal
-      size='medium'
+      size="medium"
       visible={visible}
-      header={<Header variant='h2'>Theme Settings</Header>}
+      header={<Header variant="h2">Theme Settings</Header>}
       footer={
-        <Box float='right'>
-          <SpaceBetween size='m' direction='horizontal'>
-            <Button variant='normal' onClick={handleOnDismiss}>
+        <Box float="right">
+          <SpaceBetween size="m" direction="horizontal">
+            <Button variant="normal" onClick={handleOnDismiss}>
               Cancel
             </Button>
             <Button
-              variant='primary'
-              form='confirm-delete-budget-item'
-              formAction='submit'>
+              variant="primary"
+              form="confirm-delete-budget-item"
+              formAction="submit"
+            >
               Delete
             </Button>
           </SpaceBetween>
         </Box>
       }
-      onDismiss={onDismiss}>
+      onDismiss={onDismiss}
+    >
       <Box margin={{ bottom: 'l' }}>
-        <SpaceBetween direction='vertical' size='xl'>
+        <SpaceBetween direction="vertical" size="xl">
           <GenericForm
             key={formKey}
-            formId='confirm-delete-budget-item'
+            formId="confirm-delete-budget-item"
             schema={confirmDeleteSchema}
-            onSubmit={handleConfirmDelete}>
+            onSubmit={handleConfirmDelete}
+          >
             <FormInput<ConfirmDeleteSchema>
-              name='confirmDelete'
+              name="confirmDelete"
               label={`Type "confirm" to delete the following ${resources.length} resource(s)`}
             />
           </GenericForm>

@@ -1,8 +1,15 @@
 import { useCollection } from '@cloudscape-design/collection-hooks';
 import type { CollectionPreferencesProps } from '@cloudscape-design/components/collection-preferences';
 import type { TableProps } from '@cloudscape-design/components/table';
-import { TableEmptyState, TableNoMatchState } from '../components/table/common/table-states';
-import { createDefaultPreferences, createFilteringProperties, TableColumnDefinition } from '../utils/table-utils';
+import {
+  TableEmptyState,
+  TableNoMatchState,
+} from '../components/table/common/table-states';
+import {
+  createDefaultPreferences,
+  createFilteringProperties,
+  TableColumnDefinition,
+} from '../utils/table-utils';
 import { useColumnWidths } from './use-column-widths';
 import { useLocalStorage } from './use-local-storage';
 

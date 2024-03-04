@@ -61,7 +61,7 @@ const CreateBudgetItemModal = () => {
         },
       });
     },
-    [createBudgetItemMutation, addNotification, navigate]
+    [createBudgetItemMutation, addNotification, navigate],
   );
 
   const handleOnDismiss = () => {
@@ -73,47 +73,52 @@ const CreateBudgetItemModal = () => {
     <GenericForm
       key={formKey}
       schema={budgetItemSchema}
-      formId='create-budget-item-form'
+      formId="create-budget-item-form"
       actions={
-        <SpaceBetween direction='horizontal' size='xs'>
-          <Button variant='normal' onClick={handleOnDismiss}>
+        <SpaceBetween direction="horizontal" size="xs">
+          <Button variant="normal" onClick={handleOnDismiss}>
             Cancel
           </Button>
-          <Button form='create-budget-item-form' formAction='submit' variant='primary'>
+          <Button
+            form="create-budget-item-form"
+            formAction="submit"
+            variant="primary"
+          >
             Create
           </Button>
         </SpaceBetween>
       }
-      onSubmit={handleCreateConfirm}>
+      onSubmit={handleCreateConfirm}
+    >
       <Container>
-        <SpaceBetween direction='vertical' size='m'>
+        <SpaceBetween direction="vertical" size="m">
           <FormInput<BudgetItemSchema>
-            name='title'
-            label='Name'
-            placeholder='Enter the name of the budget item'
+            name="title"
+            label="Name"
+            placeholder="Enter the name of the budget item"
           />
           <FormInput<BudgetItemSchema>
-            type='number'
-            inputMode='numeric'
-            label='Amount'
-            name='amount'
-            placeholder='Enter the amount of the budget item'
+            type="number"
+            inputMode="numeric"
+            label="Amount"
+            name="amount"
+            placeholder="Enter the amount of the budget item"
           />
           <FormAutosuggest<BudgetItemSchema>
-            name='category'
-            label='Category'
-            placeholder='Enter the category of the budget item'
-            endpoint='/finances/categories'
+            name="category"
+            label="Category"
+            placeholder="Enter the category of the budget item"
+            endpoint="/finances/categories"
           />
           <FormInput<BudgetItemSchema>
-            label='Date'
-            name='date'
-            placeholder='Enter the date of the budget item'
+            label="Date"
+            name="date"
+            placeholder="Enter the date of the budget item"
           />
           <FormInput<BudgetItemSchema>
-            label='Description'
-            name='description'
-            placeholder='Enter the description of the budget item'
+            label="Description"
+            name="description"
+            placeholder="Enter the description of the budget item"
           />
         </SpaceBetween>
       </Container>

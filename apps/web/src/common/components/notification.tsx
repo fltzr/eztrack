@@ -5,14 +5,14 @@ import { useNotificationStore } from '../stores/use-notification-store';
 export const Notification = () => {
   const notifications = useNotificationStore((state) => state.notifications);
   const removeNotification = useNotificationStore(
-    (state) => state.removeNotification
+    (state) => state.removeNotification,
   );
 
   const handleDismiss = useCallback(
     (id: string) => {
       removeNotification(id);
     },
-    [removeNotification]
+    [removeNotification],
   );
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export const Notification = () => {
       .map((n) =>
         setTimeout(() => {
           handleDismiss(n.id ?? '');
-        }, 5000)
+        }, 5000),
       );
 
     return () => {

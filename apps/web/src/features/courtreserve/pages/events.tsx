@@ -12,7 +12,8 @@ export const CourtreserveEventsPage = () => {
   const addNotification = useNotificationStore((s) => s.addNotification);
 
   const fetchCourtreserveEvents = useFetchCourtreserveEventsQuery();
-  const addCourtreserveSubsctiptionMutation = useAddCourtreserveSubsctiptionMutation();
+  const addCourtreserveSubsctiptionMutation =
+    useAddCourtreserveSubsctiptionMutation();
 
   const handleRefreshClick = () => {
     fetchCourtreserveEvents.refetch().catch((error) => {
@@ -57,8 +58,11 @@ export const CourtreserveEventsPage = () => {
       events={fetchCourtreserveEvents.data.events}
       selectedItems={selectedItems}
       setSelectedItems={setSelectedItems}
-      loading={fetchCourtreserveEvents.isFetching || fetchCourtreserveEvents.isRefetching}
-      miscButtonLabel='Watch'
+      loading={
+        fetchCourtreserveEvents.isFetching ||
+        fetchCourtreserveEvents.isRefetching
+      }
+      miscButtonLabel="Watch"
       onRefreshClick={handleRefreshClick}
       onMiscClick={handleAddSubscriptionsClick}
     />

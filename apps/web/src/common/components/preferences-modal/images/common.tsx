@@ -22,7 +22,8 @@ export const TableRow = ({
   return (
     <g
       transform={`translate(0, ${offset})`}
-      className={isHeader ? styles['column-header'] : styles.disabled}>
+      className={isHeader ? styles['column-header'] : styles.disabled}
+    >
       <path d={`M53 ${offsetTop}H56V${offsetBottom}H53V${offsetTop}Z`} />
       <path
         d={`M61 ${offsetTop}H85V${offsetBottom}H61V${offsetTop}Z`}
@@ -34,7 +35,7 @@ export const TableRow = ({
         <path
           d={`M48 ${separatorDistance}H187.387`}
           className={styles.separator}
-          strokeLinecap='square'
+          strokeLinecap="square"
         />
       )}
     </g>
@@ -75,18 +76,18 @@ export const TableRows = ({
 
 export const WindowPath = () => (
   <path
-    d='M24 1.00006H211C211.552 1.00006 212 1.44778 212 2.00006V105C212 105.552 211.552 106 211 106H24C23.4477 106 23 105.552 23 105V2.00006C23 1.44778 23.4477 1.00006 24 1.00006Z'
+    d="M24 1.00006H211C211.552 1.00006 212 1.44778 212 2.00006V105C212 105.552 211.552 106 211 106H24C23.4477 106 23 105.552 23 105V2.00006C23 1.44778 23.4477 1.00006 24 1.00006Z"
     className={styles.window}
-    strokeWidth='2'
+    strokeWidth="2"
   />
 );
 export const TopNavigation = () => (
-  <g className='awsui-context-top-navigation'>
+  <g className="awsui-context-top-navigation">
     <rect
-      x='24'
-      y='2'
-      width='187'
-      height='6'
+      x="24"
+      y="2"
+      width="187"
+      height="6"
       className={styles['top-navigation']}
     />
   </g>

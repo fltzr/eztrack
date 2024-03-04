@@ -40,7 +40,7 @@ export const useUpdateBudgetItemMutation = () =>
     mutationFn: async (budgetItem: BudgetItem) => {
       const response = await api.put(
         `${BUDGET_ITEMS_API_URL}/${budgetItem.id}`,
-        budgetItem
+        budgetItem,
       );
 
       return response.status;

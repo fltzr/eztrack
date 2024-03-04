@@ -19,5 +19,5 @@ export const Countdown = ({ isoDateTime }: { isoDateTime: string }) => {
     };
   }, [isoDateTime]);
 
-  return <Box variant='span'>{label}</Box>;
+  return <Box variant="span">{label}</Box>;
 };

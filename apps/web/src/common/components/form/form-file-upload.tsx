@@ -43,7 +43,8 @@ export const FormFileUpload = <T extends FieldValues>({
             errorText={errors[props.name]?.message as string | undefined}
             i18nStrings={{
               uploadButtonText: (e) => (e ? 'Upload files' : 'Upload file'),
-              dropzoneText: (e) => (e ? 'Drop files to upload' : 'Drop file to upload'),
+              dropzoneText: (e) =>
+                e ? 'Drop files to upload' : 'Drop file to upload',
               removeFileAriaLabel: (e) => `Remove file ${e + 1}`,
               limitShowFewer: 'Show fewer files',
               limitShowMore: 'Show more files',

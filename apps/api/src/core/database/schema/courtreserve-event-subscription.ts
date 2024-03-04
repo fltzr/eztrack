@@ -25,7 +25,7 @@ export const courtreserveEventSubscriptions = pgTable(
     notify_on_spot_available: boolean('notify_on_spot_available').notNull(),
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
   },
-  table => ({
+  (table) => ({
     userSubscriptionIdx: index('user_subscription_idx').on(table.userId),
     userSubscriptionFk: foreignKey({
       columns: [table.userId],

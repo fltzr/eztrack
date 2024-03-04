@@ -66,7 +66,7 @@ const BudgetItems = () => {
         },
       });
     },
-    [updateBudgetItemMutation, addNotification, invalidateQueries]
+    [updateBudgetItemMutation, addNotification, invalidateQueries],
   );
 
   const handleCreateInit = useCallback(() => {
@@ -112,34 +112,42 @@ const BudgetItems = () => {
         setSelectedItems([]);
       },
     });
-  }, [addNotification, deleteBudgetItemsMutation, invalidateQueries, selectedItems]);
+  }, [
+    addNotification,
+    deleteBudgetItemsMutation,
+    invalidateQueries,
+    selectedItems,
+  ]);
 
   return (
     <>
-      <SpaceBetween direction='vertical' size='m'>
+      <SpaceBetween direction="vertical" size="m">
         <BudgetItemsTable
           budgetItems={fetchBudgetItemsQuery.data.budgetItems}
           selectedItems={selectedItems}
           setSelectedItems={setSelectedItems}
-          loading={fetchBudgetItemsQuery.isFetching || fetchBudgetItemsQuery.isRefetching}
+          loading={
+            fetchBudgetItemsQuery.isFetching ||
+            fetchBudgetItemsQuery.isRefetching
+          }
           onRefreshClick={handleRefreshClick}
           onCreateClick={handleCreateInit}
           onSubmitEdit={handleSubmitEdit}
           onDeleteClick={handleDeleteInit}
         />
-        <SpaceBetween direction='horizontal' size='s'>
-          <Container header='Total'>
+        <SpaceBetween direction="horizontal" size="s">
+          <Container header="Total">
             {/* Get the toal money from budget items */}
             {fetchBudgetItemsQuery.data.budgetItems.reduce(
               (acc, item) => acc + (item.amount + 0),
-              0
+              0,
             )}
           </Container>
-          <Container header='Total'>
+          <Container header="Total">
             {/* Get the toal money from budget items */}
             {fetchBudgetItemsQuery.data.budgetItems.reduce(
               (acc, item) => acc + (item.amount + 0),
-              0
+              0,
             )}
           </Container>
         </SpaceBetween>

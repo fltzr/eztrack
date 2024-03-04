@@ -30,10 +30,10 @@ export const FullPageHeader = ({
   <Box margin={{ top: 'm', bottom: 'xs' }}>
     <Header
       {...props}
-      variant='awsui-h1-sticky'
+      variant="awsui-h1-sticky"
       info={onInfoLinkClick && <InfoLink onFollow={onInfoLinkClick} />}
       actions={
-        <SpaceBetween size='xs' direction='horizontal'>
+        <SpaceBetween size="xs" direction="horizontal">
           {extraActions}
           {actionButtons?.map((action) => (
             <Button
@@ -41,12 +41,14 @@ export const FullPageHeader = ({
               data-test-id={`header-btn-${action.label.toLowerCase()}`}
               variant={action.variant ?? 'normal'}
               disabled={action.disabled}
-              onClick={action.onClick}>
+              onClick={action.onClick}
+            >
               {action.label}
             </Button>
           ))}
         </SpaceBetween>
-      }>
+      }
+    >
       {title}
     </Header>
   </Box>

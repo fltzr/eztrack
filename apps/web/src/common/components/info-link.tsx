@@ -5,5 +5,5 @@ type InfoLinkProps = {
   onFollow: LinkProps['onFollow'];
 };
 export const InfoLink = ({ ...props }: InfoLinkProps) => (
-  <Link variant='info' {...props} />
+  <Link variant="info" {...props} />
 );

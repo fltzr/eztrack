@@ -17,15 +17,15 @@ export const BudgetItemsTable = ({
 }: BudgetItemsTableProps) => (
   <ReusableTable<BudgetItem>
     stickyHeader
-    variant='stacked'
-    localstorageKeyPrefix='Budget-Items'
-    resource='Budget Item'
+    variant="stacked"
+    localstorageKeyPrefix="Budget-Items"
+    resource="Budget Item"
     columnDefinitions={budgetItemColumnDefinitions}
     items={budgetItems}
     selectedItems={selectedItems}
     loading={loading}
-    loadingText='Loading resources...'
-    selectionType='multi'
+    loadingText="Loading resources..."
+    selectionType="multi"
     {...clickHandlers}
   />
 );

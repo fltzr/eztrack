@@ -1,5 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Controller, useFormContext, type FieldValues, type Path } from 'react-hook-form';
+import {
+  Controller,
+  useFormContext,
+  type FieldValues,
+  type Path,
+} from 'react-hook-form';
 import { useDebounce } from 'react-use';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import Autosuggest, {
@@ -29,7 +34,7 @@ type FormAutosuggestProps<T extends FieldValues> = Omit<
 const useFetchSuggestions = <T extends FieldValues>(
   endpoint: string,
   name: Path<T>,
-  debouncedSearch: string
+  debouncedSearch: string,
 ) =>
   useInfiniteQuery<FetchSuggestionsResponse>({
     /**
@@ -67,7 +72,7 @@ export const FormAutosuggest = <T extends FieldValues>({
       setDebouncedSearch(search);
     },
     500,
-    [search]
+    [search],
   );
 
   const { data, fetchNextPage, hasNextPage, isError, isPending, isFetching } =
@@ -80,9 +85,9 @@ export const FormAutosuggest = <T extends FieldValues>({
         page.results.map((s) => ({
           label: s.label,
           value: s.value,
-        }))
+        })),
       ) ?? [],
-    [data?.pages]
+    [data?.pages],
   );
 
   // Determine the status type of the autosuggest component. This is used
@@ -110,16 +115,19 @@ export const FormAutosuggest = <T extends FieldValues>({
       render={({ field }) => (
         <FormField
           label={props.label}
-          errorText={errors[props.name]?.message as string | undefined}>
+          errorText={errors[props.name]?.message as string | undefined}
+        >
           <Autosuggest
             {...field}
             {...props}
             disableBrowserAutocorrect
-            filteringType='manual'
+            filteringType="manual"
             options={options}
             loadingText={`Loading ${props.label?.toString().toLowerCase()}...`}
-            finishedText={search ? `End of "${search}" results` : 'End of all results'}
-            empty='No results'
+            finishedText={
+              search ? `End of "${search}" results` : 'End of all results'
+            }
+            empty="No results"
             statusType={getStatusType()}
             onLoadItems={() => {
               hasNextPage && !isPending && fetchNextPage().catch(console.error);

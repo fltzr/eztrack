@@ -161,7 +161,7 @@ export const signoutController = async (
   response: Response,
 ) => {
   try {
-    request.session.destroy(error => {
+    request.session.destroy((error) => {
       if (error) {
         return response.status(400).json({
           message: 'Unable to sign out. Please try again later.',

@@ -24,13 +24,13 @@ export const useColumnWidths = <T>({
   });
 
   const handleWidthChange = (
-    event: NonCancelableCustomEvent<TableProps.ColumnWidthsChangeDetail>
+    event: NonCancelableCustomEvent<TableProps.ColumnWidthsChangeDetail>,
   ) => {
     saveWidths(
       mapWidthWithColumnDefinitionIds({
         columnDefinitions,
         widths: event.detail.widths,
-      })
+      }),
     );
   };
 
@@ -40,7 +40,7 @@ export const useColumnWidths = <T>({
         columnDefinitions,
         columnWidthsArray: widths,
       }),
-    [columnDefinitions, widths]
+    [columnDefinitions, widths],
   );
 
   return [memoColumnDefinitions, handleWidthChange] as const;

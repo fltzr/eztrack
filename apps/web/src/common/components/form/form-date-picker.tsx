@@ -26,7 +26,8 @@ export const FormDatePicker = <T extends FieldValues>({
       render={({ field }) => (
         <FormField
           label={props.label}
-          errorText={errors[props.name]?.message as string | undefined}>
+          errorText={errors[props.name]?.message as string | undefined}
+        >
           <DatePicker
             {...field}
             {...props}

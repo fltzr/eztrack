@@ -9,8 +9,8 @@ const Home = () => {
 
   return (
     <Container>
-      <Box variant='pre'>{JSON.stringify(layoutState, null, 2)}</Box>
-      <Box variant='pre'>{JSON.stringify(authState, null, 2)}</Box>
+      <Box variant="pre">{JSON.stringify(layoutState, null, 2)}</Box>
+      <Box variant="pre">{JSON.stringify(authState, null, 2)}</Box>
     </Container>
   );
 };

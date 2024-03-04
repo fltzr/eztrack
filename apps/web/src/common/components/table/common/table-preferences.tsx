@@ -7,7 +7,7 @@ import {
   createPageSizeOptions,
   type TableColumnDefinition,
 } from '../../../utils/table-utils';
-  import { useNotificationStore } from '../../../stores/use-notification-store';
+import { useNotificationStore } from '../../../stores/use-notification-store';
 
 type PreferencesProps = {
   resource: string;
@@ -22,14 +22,14 @@ export const Preferences = ({ ...props }: PreferencesProps) => {
   const pageSizeOptions = createPageSizeOptions(props.resource);
 
   const addNotification = useNotificationStore(
-    (state) => state.addNotification
+    (state) => state.addNotification,
   );
 
   return (
     <CollectionPreferences
       disabled={props.disabled}
-      confirmLabel='Apply'
-      cancelLabel='Cancel'
+      confirmLabel="Apply"
+      cancelLabel="Cancel"
       preferences={props.preferences}
       contentDisplayPreference={{ options: contentDisplayOptions }}
       pageSizePreference={{ options: pageSizeOptions }}

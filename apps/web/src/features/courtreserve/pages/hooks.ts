@@ -15,7 +15,7 @@ export const useFetchCourtreserveEventsQuery = () =>
     queryKey: [COURTRESERVE_QUERY_KEY],
     queryFn: async () => {
       const response = await api.get<CourtreserveEventResponse>(
-        COURTRESERVE_EVENTS_API_URL
+        COURTRESERVE_EVENTS_API_URL,
       );
 
       return response.data;

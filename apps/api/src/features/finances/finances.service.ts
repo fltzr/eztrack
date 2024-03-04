@@ -43,7 +43,7 @@ export const createBudgetItemService = async ({
 export const deleteBudgetItemService = async (ids: string[]) => {
   const db = DrizzleInstance();
 
-  ids.forEach(async id => {
+  ids.forEach(async (id) => {
     await db
       .update(budgetItems)
       .set({ isDeleted: true })

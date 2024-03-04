@@ -28,6 +28,6 @@ export const usePreferencesStore = create<
     }),
     {
       name: '__MW::user-preferences',
-    }
-  )
+    },
+  ),
 );

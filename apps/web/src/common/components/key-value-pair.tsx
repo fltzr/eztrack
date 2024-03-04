@@ -7,7 +7,7 @@ type KeyValuePairProps = {
 
 export const KeyValuePair = ({ label, children }: KeyValuePairProps) => (
   <div>
-    <Box variant='awsui-key-label'>{label}</Box>
+    <Box variant="awsui-key-label">{label}</Box>
     <div>{children}</div>
   </div>
 );

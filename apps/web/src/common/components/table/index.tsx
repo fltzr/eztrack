@@ -8,7 +8,10 @@ import {
   getTextFilterCounterText,
 } from '../../utils/table-utils';
 import { useTableState } from '../../hooks/use-table-state';
-import { FullPageHeader, type FullPageHeaderProps } from './common/table-header';
+import {
+  FullPageHeader,
+  type FullPageHeaderProps,
+} from './common/table-header';
 import { ManualRefresh } from './common/table-manual-refresh-button';
 import { Preferences } from './common/table-preferences';
 import type { ReusableTableProps } from './common/table-props';
@@ -66,7 +69,7 @@ export const ReusableTable = <T extends { id: string }>({
           variant: 'primary',
         },
       ].filter(Boolean) as FullPageHeaderProps['actionButtons'],
-    [props, selectedItems]
+    [props, selectedItems],
   );
 
   const preferencesProps = useMemo(
@@ -75,7 +78,7 @@ export const ReusableTable = <T extends { id: string }>({
       items: tableState.columnDefinitions,
       preferences: tableState.preferences,
     }),
-    [resource, tableState]
+    [resource, tableState],
   );
 
   return (
@@ -120,16 +123,16 @@ export const ReusableTable = <T extends { id: string }>({
       }
       filter={
         disableFilter ? undefined : (
-            <PropertyFilter
-              {...tableState.propertyFilterProps}
-              expandToViewport
-              filteringAriaLabel={`Filter ${resource.toLowerCase()}s`}
-              filteringPlaceholder={`Filter ${resource.toLowerCase()}s`}
-              countText={getTextFilterCounterText({
-                count: tableState.filteredItemsCount,
-              })}
-            />
-          )
+          <PropertyFilter
+            {...tableState.propertyFilterProps}
+            expandToViewport
+            filteringAriaLabel={`Filter ${resource.toLowerCase()}s`}
+            filteringPlaceholder={`Filter ${resource.toLowerCase()}s`}
+            countText={getTextFilterCounterText({
+              count: tableState.filteredItemsCount,
+            })}
+          />
+        )
       }
       preferences={
         <Preferences

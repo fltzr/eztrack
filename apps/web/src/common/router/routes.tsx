@@ -15,7 +15,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <Navigate replace to='/home' />,
+        element: <Navigate replace to="/home" />,
       },
       {
         element: <AuthenticatedRoute />,
@@ -44,7 +44,9 @@ const routes: RouteObject[] = [
                   {
                     path: 'create',
                     lazy: () =>
-                      import('../../features/finances/pages/create-budget-item'),
+                      import(
+                        '../../features/finances/pages/create-budget-item'
+                      ),
                   },
                 ],
               },

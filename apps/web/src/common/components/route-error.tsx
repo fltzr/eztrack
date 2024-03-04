@@ -17,28 +17,30 @@ export const RouteError = () => {
 
   return (
     <Container
-      variant='default'
+      variant="default"
       header={
-        <Header variant='h1' description='We hit a roadblock.'>
+        <Header variant="h1" description="We hit a roadblock.">
           Uh oh!
         </Header>
       }
       footer={
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <Button
-            variant='primary'
+            variant="primary"
             onClick={(event) => {
               event.preventDefault();
               navigate(-1);
-            }}>
+            }}
+          >
             Go back
           </Button>
         </div>
-      }>
-      <Box variant='code'>
-        {isRouteErrorResponse(error) ?
-          error.data
-        : JSON.stringify(error, null, 2)}
+      }
+    >
+      <Box variant="code">
+        {isRouteErrorResponse(error)
+          ? error.data
+          : JSON.stringify(error, null, 2)}
       </Box>
     </Container>
   );

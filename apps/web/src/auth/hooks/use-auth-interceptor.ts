@@ -20,7 +20,7 @@ export const useAuthInterceptor = () => {
         }
 
         return Promise.reject(new Error(error.message || 'An error occurred'));
-      }
+      },
     );
 
     return () => {

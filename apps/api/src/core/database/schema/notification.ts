@@ -28,7 +28,7 @@ export const notifications = pgTable(
     sentAt: timestamp('sent_at', { withTimezone: true }).notNull(),
     status: notificationStatusEnum('status'),
   },
-  table => ({
+  (table) => ({
     subscriptionIdx: index('subscription_idx').on(table.subscriptionId),
     subscriptionFk: foreignKey({
       columns: [table.subscriptionId],
