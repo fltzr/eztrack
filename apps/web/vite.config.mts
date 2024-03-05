@@ -29,7 +29,7 @@ export default defineConfig(({ mode }) => {
       open: false,
     },
 
-    plugins: [react(), nxViteTsPaths(), visualizer()],
+    plugins: [react(), nxViteTsPaths(), splitVendorChunkPlugin(), visualizer()],
 
     // Uncomment this if you are using workers.
     // worker: {

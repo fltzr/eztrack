@@ -1,4 +1,4 @@
-import { api } from '../utils/axios';
+import { api } from '@/web/utils';
 
 export type Suggestion = {
   label: string;

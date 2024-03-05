@@ -3,10 +3,9 @@ import { useState, type PropsWithChildren } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import TopNavigation from '@cloudscape-design/components/top-navigation';
-import { useAuthStore } from '../../../auth/auth-store';
+import { useAuthStore, useNotificationStore } from '@/web/state-management';
 import { UserPreferencesModal } from '../preferences-modal/index';
-import { useNotificationStore } from '../../stores/use-notification-store';
-import { api } from '../../utils/axios';
+import { api } from '@/web/utils';
 import styles from './styles.module.css';
 
 const HeaderPortal = ({ children }: PropsWithChildren) => {

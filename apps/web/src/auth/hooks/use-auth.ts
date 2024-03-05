@@ -1,7 +1,7 @@
 import type { AxiosError } from 'axios';
-import { useAuthStore } from '../auth-store';
+import { useAuthStore } from '@/web/state-management';
 import { useAuthData } from './use-auth-data';
-import { pageload, signin, signout } from '../../common/api/auth';
+import { pageload, signin, signout } from '../auth-api';
 import { SignInSchemaType } from '../../features/auth/types/index';
 
 export const useAuth = () => {

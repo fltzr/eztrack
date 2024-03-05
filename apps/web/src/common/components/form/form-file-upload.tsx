@@ -9,7 +9,7 @@ import FileUpload, {
   type FileUploadProps,
 } from '@cloudscape-design/components/file-upload';
 import FormField from '@cloudscape-design/components/form-field';
-import { FormBaseProps } from '../../types/form-base-props';
+import { FormBaseProps } from './form-base-props';
 
 type FormFileUploadProps<T extends FieldValues> = Omit<
   FileUploadProps,

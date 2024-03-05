@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@/web/courtreserve": ["libs/web/courtreserve/feature-main/src/index.ts"],
+      "@/web/state-management": ["libs/web/state-management/src/index.ts"],
+      "@/web/types": ["libs/web/types/src/index.ts"],
+      "@/web/ui": ["libs/web/ui/src/index.ts"],
+      "@/web/utils": ["libs/web/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

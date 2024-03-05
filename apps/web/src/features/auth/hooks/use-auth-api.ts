@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
-import { Account } from '../../../common/types/user';
-import { api } from '../../../common/utils/axios';
+import { Account } from '@/web/types';
+import { api } from '@/web/utils';
 import type { SignInSchemaType } from '../types';
 
 type PageloadResponse = {

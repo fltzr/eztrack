@@ -14,8 +14,8 @@ import FormField from '@cloudscape-design/components/form-field';
 import {
   fetchSuggestions,
   type FetchSuggestionsResponse,
-} from '../../api/autosuggestions';
-import { FormBaseProps } from '../../types/form-base-props';
+} from './autosuggestions';
+import { FormBaseProps } from '../form-base-props';
 
 /**
  * Type definition for props accepted by the FormAutosuggest component.

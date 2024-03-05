@@ -6,7 +6,7 @@ import {
 import { App } from '../../app';
 import { AuthenticatedRoute } from '../../auth/authenticated-route';
 import { UnauthenticatedRoute } from '../../auth/unauthenticated-route';
-import { RouteError } from '../components/route-error';
+import { RouteError } from '@/web/ui';
 
 const routes: RouteObject[] = [
   {

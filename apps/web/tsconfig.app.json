@@ -19,5 +19,20 @@
     "src/**/*.spec.jsx",
     "src/**/*.test.jsx"
   ],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"]
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../../libs/web/state-management/src/lib/use-layout-store.tsx",
+    "../../libs/web/state-management/src/lib/use-notification-store.tsx",
+    "../../libs/web/state-management/src/lib/use-preferences-store.ts",
+    "../../libs/web/types/src/lib/user.ts",
+    "../../libs/web/utils/src/lib/format-date.ts",
+    "../../libs/web/utils/src/lib/axios.ts",
+    "../../libs/web/utils/src/lib/local-storage.ts",
+    "../../libs/web/ui/src/lib/route-error.tsx",
+    "../../libs/web/ui/src/lib/key-value-pair.tsx",
+    "../../libs/web/ui/src/lib/info-link.tsx"
+  ]
 }

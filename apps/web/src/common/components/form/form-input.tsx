@@ -4,7 +4,7 @@ import Button from '@cloudscape-design/components/button';
 import FormField from '@cloudscape-design/components/form-field';
 import Grid from '@cloudscape-design/components/grid';
 import Input, { type InputProps } from '@cloudscape-design/components/input';
-import { FormBaseProps } from '../../types/form-base-props';
+import { FormBaseProps } from './form-base-props';
 
 type FormInputProps<T extends FieldValues> = Omit<
   InputProps,

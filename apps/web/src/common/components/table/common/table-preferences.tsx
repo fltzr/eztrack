@@ -7,7 +7,7 @@ import {
   createPageSizeOptions,
   type TableColumnDefinition,
 } from '../../../utils/table-utils';
-import { useNotificationStore } from '../../../stores/use-notification-store';
+import { useNotificationStore } from '@/web/state-management';
 
 type PreferencesProps = {
   resource: string;

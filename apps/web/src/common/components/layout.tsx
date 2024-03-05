@@ -1,9 +1,8 @@
 import type { PropsWithChildren } from 'react';
 import AppLayout from '@cloudscape-design/components/app-layout';
-import { useAuthStore } from '../../auth/auth-store';
+import { useAuthStore, useLayoutStore } from '@/web/state-management';
 import { Header } from './header/index';
 import { Navigation } from './navigation';
-import { useLayoutStore } from '../stores/use-layout-store';
 import { Notification } from './notification';
 
 const Layout = ({ children }: PropsWithChildren) => {

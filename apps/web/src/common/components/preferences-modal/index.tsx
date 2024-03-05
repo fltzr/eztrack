@@ -6,7 +6,7 @@ import Modal from '@cloudscape-design/components/modal';
 import Select, { type SelectProps } from '@cloudscape-design/components/select';
 import SpaceBetween from '@cloudscape-design/components/space-between';
 import Tiles from '@cloudscape-design/components/tiles';
-import { usePreferencesStore } from '../../stores/use-preferences-store';
+import { usePreferencesStore } from '@/web/state-management';
 import comfortableDensity from './images/comfortable-density';
 import compactDensity from './images/compact-density';
 

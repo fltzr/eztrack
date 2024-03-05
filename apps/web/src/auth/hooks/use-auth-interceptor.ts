@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { AxiosError } from 'axios';
-import { api } from '../../common/utils/axios';
+import { api } from '@/web/utils';
 import { useAuthData } from './use-auth-data';
 
 export const useAuthInterceptor = () => {

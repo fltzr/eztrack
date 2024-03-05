@@ -1,7 +1,7 @@
 import { StrictMode, Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
-import { Loader } from './common/components/loader/index';
+import { Loader } from '@/web/ui';
 import { router } from './common/router/routes';
 
 import '@cloudscape-design/global-styles/index.css';

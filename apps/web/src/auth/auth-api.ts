@@ -1,6 +1,6 @@
-import { SignInSchemaType } from '../../features/auth/types/index';
-import { Account } from '../types/user';
-import { api } from '../utils/axios';
+import { SignInSchemaType } from '../features/auth/types/index';
+import { Account } from '@/web/types';
+import { api } from '@/web/utils';
 
 type PageloadResponse = {
   isAuthenticated: boolean;

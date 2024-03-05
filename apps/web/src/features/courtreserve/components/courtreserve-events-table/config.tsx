@@ -4,7 +4,7 @@ import Box from '@cloudscape-design/components/box';
 import Link from '@cloudscape-design/components/link';
 import { Countdown } from '../../../../common/components/datetime/countdown';
 import type { TableColumnDefinition } from '../../../../common/utils/table-utils';
-import { formatISODate } from '../../../../common/utils/format-date';
+import { formatISODate } from '@/web/utils';
 
 export type CourtreserveEvent = {
   id: string;

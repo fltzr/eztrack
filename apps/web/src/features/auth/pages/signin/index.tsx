@@ -9,7 +9,7 @@ import type { AxiosError } from 'axios';
 import { useAuth } from '../../../../auth/hooks/use-auth';
 import { FormInput } from '../../../../common/components/form/form-input';
 import { GenericForm } from '../../../../common/components/form/generic-form';
-import { useNotificationStore } from '../../../../common/stores/use-notification-store';
+import { useNotificationStore } from '@/web/state-management';
 import { signInSchema, type SignInSchemaType } from '../../types';
 import styles from './styles.module.scss';
 

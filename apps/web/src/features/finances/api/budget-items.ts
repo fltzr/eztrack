@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { api } from '../../../common/utils/axios';
+import { api } from '@/web/utils';
 import type { BudgetItemsResponse } from '../types';
 
 export const BUDGET_ITEM_KEY = 'budget-item';

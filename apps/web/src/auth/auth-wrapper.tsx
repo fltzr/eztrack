@@ -1,6 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { Loader } from '../common/components/loader/index';
-import { RouteError } from '../common/components/route-error';
+import { Loader, RouteError } from '@/web/ui';
 import { useAuthRestore } from './hooks/use-auth-restore';
 
 export const AuthWrapper = ({ children }: PropsWithChildren) => {

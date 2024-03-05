@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { api } from '../../../../common/utils/axios';
+import { api } from '@/web/utils';
 import type { BudgetItem, BudgetItemsResponse } from '../../types';
 import type { BudgetItemSchema } from '../create-budget-item';
 

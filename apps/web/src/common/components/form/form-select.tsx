@@ -1,7 +1,7 @@
 import { useFormContext, Controller, type FieldValues } from 'react-hook-form';
 import FormField from '@cloudscape-design/components/form-field';
 import Select, { type SelectProps } from '@cloudscape-design/components/select';
-import { FormBaseProps } from '../../types/form-base-props';
+import { FormBaseProps } from './form-base-props';
 
 type FormSelectProps<T extends FieldValues> = Omit<
   SelectProps,

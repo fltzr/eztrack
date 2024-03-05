@@ -3,7 +3,7 @@ import FormField from '@cloudscape-design/components/form-field';
 import Textarea, {
   type TextareaProps,
 } from '@cloudscape-design/components/textarea';
-import { FormBaseProps } from '../../types/form-base-props';
+import { FormBaseProps } from './form-base-props';
 
 type FormTextareaProps<T extends FieldValues> = Omit<
   TextareaProps,
