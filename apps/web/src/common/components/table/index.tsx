@@ -6,14 +6,14 @@ import Table from '@cloudscape-design/components/table';
 import {
   getHeaderCounterText,
   getTextFilterCounterText,
-} from '../../utils/table-utils';
-import { useTableState } from '../../hooks/use-table-state';
+} from './common/utils/table-utils';
+import { useTableState } from './common/hooks/use-table-state';
 import {
   FullPageHeader,
   type FullPageHeaderProps,
-} from './common/table-header';
-import { ManualRefresh } from './common/table-manual-refresh-button';
-import { Preferences } from './common/table-preferences';
+} from './common/components/table-header';
+import { ManualRefresh } from './common/components/table-manual-refresh-button';
+import { Preferences } from './common/components/table-preferences';
 import type { ReusableTableProps } from './common/table-props';
 
 export const ReusableTable = <T extends { id: string }>({

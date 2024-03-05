@@ -2,9 +2,10 @@ import { DateTime } from 'luxon';
 import Badge from '@cloudscape-design/components/badge';
 import Box from '@cloudscape-design/components/box';
 import Link from '@cloudscape-design/components/link';
-import { Countdown } from '../../../../common/components/datetime/countdown';
-import type { TableColumnDefinition } from '../../../../common/utils/table-utils';
 import { formatISODate } from '@/web/utils';
+import { TableColumnDefinition } from '@/web/types';
+
+import { Countdown } from '../countdown';
 
 export type CourtreserveEvent = {
   id: string;

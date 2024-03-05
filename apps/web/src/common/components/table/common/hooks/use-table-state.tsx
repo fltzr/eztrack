@@ -1,17 +1,48 @@
-import { useCollection } from '@cloudscape-design/collection-hooks';
+import {
+  PropertyFilterProperty,
+  useCollection,
+} from '@cloudscape-design/collection-hooks';
 import type { CollectionPreferencesProps } from '@cloudscape-design/components/collection-preferences';
 import type { TableProps } from '@cloudscape-design/components/table';
-import {
-  TableEmptyState,
-  TableNoMatchState,
-} from '../components/table/common/table-states';
-import {
-  createDefaultPreferences,
-  createFilteringProperties,
-  TableColumnDefinition,
-} from '../utils/table-utils';
+import { TableEmptyState, TableNoMatchState } from '../components/table-states';
 import { useColumnWidths } from './use-column-widths';
-import { useLocalStorage } from './use-local-storage';
+import { useLocalStorage } from '../../../../hooks/use-local-storage';
+import { TableColumnDefinition } from '@/web/types';
+import {
+  DateTimeForm,
+  formatDateTime,
+} from '../components/table-date-time-form';
+
+const createDefaultPreferences = <T,>(
+  columnDefinitions: TableColumnDefinition<T>[],
+): CollectionPreferencesProps.Preferences => ({
+  pageSize: 10,
+  contentDisplay: columnDefinitions.map((columnDefinition) => ({
+    id: columnDefinition.id,
+    visible: columnDefinition.isVisible ?? true,
+  })),
+  wrapLines: false,
+  stripedRows: false,
+  contentDensity: 'comfortable',
+  stickyColumns: { first: 0, last: 1 },
+});
+
+const createFilteringProperties = <T,>(
+  columnDefinitions: TableColumnDefinition<T>[],
+): PropertyFilterProperty[] =>
+  columnDefinitions.map((columnDefinition) => ({
+    key: columnDefinition.id,
+    propertyLabel: columnDefinition.header?.toString() ?? '',
+    groupValuesLabel: `${columnDefinition.header?.toString() ?? ''} values`,
+    operators: columnDefinition.isDateTime
+      ? ['<', '<=', '>', '>='].map((operator) => ({
+          operator,
+          form: DateTimeForm,
+          format: formatDateTime,
+          match: 'datetime',
+        }))
+      : [':', '!:', '=', '!=', '^'],
+  }));
 
 type UseTableStateProps<T> = Pick<
   TableProps,

@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import TopNavigation from '@cloudscape-design/components/top-navigation';
 import { useAuthStore, useNotificationStore } from '@/web/state-management';
-import { UserPreferencesModal } from '../preferences-modal/index';
+import { UserPreferencesModal } from './preferences-modal/index';
 import { api } from '@/web/utils';
 import styles from './styles.module.css';
 

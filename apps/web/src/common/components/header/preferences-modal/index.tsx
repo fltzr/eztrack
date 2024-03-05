@@ -1,4 +1,3 @@
-import { Mode as Theme, Density } from '@cloudscape-design/global-styles';
 import Box from '@cloudscape-design/components/box';
 import FormField from '@cloudscape-design/components/form-field';
 import Header from '@cloudscape-design/components/header';
@@ -6,7 +5,10 @@ import Modal from '@cloudscape-design/components/modal';
 import Select, { type SelectProps } from '@cloudscape-design/components/select';
 import SpaceBetween from '@cloudscape-design/components/space-between';
 import Tiles from '@cloudscape-design/components/tiles';
+import { Density, Mode as Theme } from '@cloudscape-design/global-styles';
+
 import { usePreferencesStore } from '@/web/state-management';
+
 import comfortableDensity from './images/comfortable-density';
 import compactDensity from './images/compact-density';
 
