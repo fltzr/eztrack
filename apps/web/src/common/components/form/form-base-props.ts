@@ -3,6 +3,7 @@ import type { FormFieldProps } from '@cloudscape-design/components/form-field';
 
 export type FormBaseProps<T> = {
   name: Path<T>;
+  testId: string;
   label?: FormFieldProps['label'];
   description?: FormFieldProps['description'];
   info?: FormFieldProps['info'];

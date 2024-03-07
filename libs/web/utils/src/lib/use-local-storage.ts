@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { load, save } from '@/web/utils';
+import { load, save } from './local-storage';
 
 type UseLocalStorageProps<T> = {
   localstorageKey: string;

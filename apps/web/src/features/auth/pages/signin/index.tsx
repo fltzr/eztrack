@@ -57,6 +57,7 @@ const SignInPage = () => {
             >
               <FormInput<SignInSchemaType>
                 disableBrowserAutocorrect
+                testId="signin-input-username"
                 name="username"
                 label="Username"
                 spellcheck={false}
@@ -66,6 +67,7 @@ const SignInPage = () => {
                 sensitive
                 disableBrowserAutocorrect
                 name="password"
+                testId="signin-input-password"
                 label="Password"
                 type="password"
                 spellcheck={false}
@@ -79,7 +81,7 @@ const SignInPage = () => {
               variant="primary"
               loadingText="Signing in..."
             >
-              Log in
+              Signin
             </Button>
           </SpaceBetween>
         </Container>

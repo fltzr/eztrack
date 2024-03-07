@@ -1,5 +1,5 @@
-import { ReusableTable } from '../../../../common/components/table/index';
-import { ReusableTableEventHandlers } from '../../../../common/components/table/common/table-props';
+import { ReusableTable } from '@/web/ui';
+import { ReusableTableEventHandlers } from '@/web/ui';
 import { courtreserveEventDefinition, type CourtreserveEvent } from './config';
 
 type CourtreserveEventTableProps = {

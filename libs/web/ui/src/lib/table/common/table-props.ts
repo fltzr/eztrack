@@ -1,5 +1,5 @@
 import type { TableProps } from '@cloudscape-design/components/table';
-import { TableColumnDefinition } from '../../../utils/table-utils';
+import { TableColumnDefinition } from '@/web/types';
 
 type BaseReusableTableProps<T> = Pick<
   TableProps,

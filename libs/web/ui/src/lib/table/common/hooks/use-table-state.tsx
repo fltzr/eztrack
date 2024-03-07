@@ -6,7 +6,7 @@ import type { CollectionPreferencesProps } from '@cloudscape-design/components/c
 import type { TableProps } from '@cloudscape-design/components/table';
 import { TableEmptyState, TableNoMatchState } from '../components/table-states';
 import { useColumnWidths } from './use-column-widths';
-import { useLocalStorage } from '../../../../hooks/use-local-storage';
+import { useLocalStorage } from '@/web/utils';
 import { TableColumnDefinition } from '@/web/types';
 import {
   DateTimeForm,

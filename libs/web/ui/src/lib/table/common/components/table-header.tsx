@@ -3,7 +3,7 @@ import Box from '@cloudscape-design/components/box';
 import Button, { type ButtonProps } from '@cloudscape-design/components/button';
 import Header, { type HeaderProps } from '@cloudscape-design/components/header';
 import SpaceBetween from '@cloudscape-design/components/space-between';
-import { InfoLink } from '@/web/ui';
+import { InfoLink } from '../../../info-link';
 
 type Action = {
   label: string;

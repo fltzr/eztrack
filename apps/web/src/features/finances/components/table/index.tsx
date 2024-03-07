@@ -1,5 +1,4 @@
-import { ReusableTable } from '../../../../common/components/table/index';
-import { ReusableTableEventHandlers } from '../../../../common/components/table/common/table-props';
+import { ReusableTable, type ReusableTableEventHandlers } from '@/web/ui';
 import type { BudgetItem } from '../../types';
 import { budgetItemColumnDefinitions } from './config';
 

@@ -15,11 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/web/courtreserve": ["libs/web/courtreserve/feature-main/src/index.ts"],
       "@/web/state-management": ["libs/web/state-management/src/index.ts"],
       "@/web/types": ["libs/web/types/src/index.ts"],
       "@/web/ui": ["libs/web/ui/src/index.ts"],
-      "@/web/utils": ["libs/web/utils/src/index.ts"]
+      "@/web/utils": ["libs/web/utils/src/index.ts"],
+      "@/web/courtreserve": ["libs/web/feature-courtreserve/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

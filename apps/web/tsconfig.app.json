@@ -34,6 +34,7 @@
     "../../libs/web/ui/src/lib/route-error.tsx",
     "../../libs/web/ui/src/lib/key-value-pair.tsx",
     "../../libs/web/ui/src/lib/info-link.tsx",
-    "../../libs/web/utils/src/lib/types/table.ts"
+    "../../libs/web/utils/src/lib/types/table.ts",
+    "../../libs/web/utils/src/lib/use-local-storage.ts"
   ]
 }

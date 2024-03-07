@@ -7,6 +7,7 @@ import { App } from '../../app';
 import { AuthenticatedRoute } from '../../auth/authenticated-route';
 import { UnauthenticatedRoute } from '../../auth/unauthenticated-route';
 import { RouteError } from '@/web/ui';
+import { courtreserveRoutes } from '@/web/courtreserve';
 
 const routes: RouteObject[] = [
   {
@@ -26,10 +27,7 @@ const routes: RouteObject[] = [
             path: 'home',
             lazy: () => import('../../features/home'),
           },
-          {
-            path: 'courtreserve',
-            lazy: () => import('../../features/courtreserve/pages/events'),
-          },
+          ...courtreserveRoutes,
           {
             path: 'finances',
             children: [

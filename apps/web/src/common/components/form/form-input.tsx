@@ -40,6 +40,7 @@ export const FormInput = <T extends FieldValues>({
               <Input
                 {...field}
                 {...props}
+                data-testid={props.testId}
                 type={isInputVisible ? 'text' : 'password'}
                 onChange={(event) => {
                   field.onChange(event.detail.value);
@@ -58,6 +59,7 @@ export const FormInput = <T extends FieldValues>({
             <Input
               {...field}
               {...props}
+              data-testid={props.testId}
               type={props.type}
               onChange={(event) => {
                 field.onChange(event.detail.value);
