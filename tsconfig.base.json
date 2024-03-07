@@ -15,11 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/web/state-management": ["libs/web/state-management/src/index.ts"],
-      "@/web/types": ["libs/web/types/src/index.ts"],
-      "@/web/ui": ["libs/web/ui/src/index.ts"],
-      "@/web/utils": ["libs/web/utils/src/index.ts"],
-      "@/web/courtreserve": ["libs/web/feature-courtreserve/src/index.ts"]
+      "@/web/state-management": [
+        "libs/web/web-shared-state-management/src/index.ts"
+      ],
+      "@/web/types": ["libs/web/web-shared-types/src/index.ts"],
+      "@/web/ui": ["libs/web/web-shared-ui/src/index.ts"],
+      "@/web/utils": ["libs/web/web-shared-utils/src/index.ts"],
+      "@/web/courtreserve": ["libs/web/web-feature-courtreserve/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

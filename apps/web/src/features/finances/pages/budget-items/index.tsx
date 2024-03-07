@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 import Container from '@cloudscape-design/components/container';
 import SpaceBetween from '@cloudscape-design/components/space-between';
-import { useNotificationStore } from '@/web/state-management';
+import { useNotificationStore } from 'libs/web/web-shared-state-management/src';
 import { ConfirmDeleteModal } from '../../components/confirm-delete-modal';
 import { BudgetItemsTable } from '../../components/table';
 import type { BudgetItem } from '../../types';

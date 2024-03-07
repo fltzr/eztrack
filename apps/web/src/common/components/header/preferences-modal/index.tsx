@@ -7,7 +7,7 @@ import SpaceBetween from '@cloudscape-design/components/space-between';
 import Tiles from '@cloudscape-design/components/tiles';
 import { Density, Mode as Theme } from '@cloudscape-design/global-styles';
 
-import { usePreferencesStore } from '@/web/state-management';
+import { usePreferencesStore } from 'libs/web/web-shared-state-management/src';
 
 import comfortableDensity from './images/comfortable-density';
 import compactDensity from './images/compact-density';

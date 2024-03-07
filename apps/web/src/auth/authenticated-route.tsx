@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuthStore } from '@/web/state-management';
+import { useAuthStore } from 'libs/web/web-shared-state-management/src';
 
 export const AuthenticatedRoute = () => {
   const authenticated = Boolean(useAuthStore((s) => s.account));

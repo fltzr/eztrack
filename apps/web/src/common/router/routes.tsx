@@ -7,7 +7,7 @@ import { App } from '../../app';
 import { AuthenticatedRoute } from '../../auth/authenticated-route';
 import { UnauthenticatedRoute } from '../../auth/unauthenticated-route';
 import { RouteError } from '@/web/ui';
-import { courtreserveRoutes } from '@/web/courtreserve';
+import { courtreserveRoutes } from 'libs/web/web-feature-courtreserve/src';
 
 const routes: RouteObject[] = [
   {

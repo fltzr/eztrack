@@ -1,6 +1,9 @@
 import Box from '@cloudscape-design/components/box';
 import Container from '@cloudscape-design/components/container';
-import { useAuthStore, useLayoutStore } from '@/web/state-management';
+import {
+  useAuthStore,
+  useLayoutStore,
+} from 'libs/web/web-shared-state-management/src';
 
 const Home = () => {
   const authState = useAuthStore();

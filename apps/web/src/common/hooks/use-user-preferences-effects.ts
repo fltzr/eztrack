@@ -3,7 +3,7 @@ import {
   applyMode as applyTheme,
   applyDensity,
 } from '@cloudscape-design/global-styles';
-import { usePreferencesStore } from '@/web/state-management';
+import { usePreferencesStore } from 'libs/web/web-shared-state-management/src';
 
 export const useUserPreferencesEffects = () => {
   const theme = usePreferencesStore((s) => s.theme);

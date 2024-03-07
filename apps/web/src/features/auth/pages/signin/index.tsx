@@ -9,11 +9,14 @@ import type { AxiosError } from 'axios';
 import { useAuth } from '../../../../auth/hooks/use-auth';
 import { FormInput } from '../../../../common/components/form/form-input';
 import { GenericForm } from '../../../../common/components/form/generic-form';
-import { useNotificationStore } from '@/web/state-management';
+import { useNotificationStore } from 'libs/web/web-shared-state-management/src';
 import { signInSchema, type SignInSchemaType } from '../../types';
 import styles from './styles.module.scss';
+import { useState } from 'react';
 
 const SignInPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
   const { signin } = useAuth();
   const addNotification = useNotificationStore(
@@ -21,6 +24,7 @@ const SignInPage = () => {
   );
 
   const handleSignin = async (data: SignInSchemaType) => {
+    setIsLoading(true);
     await signin(data)
       .then(() => {
         addNotification({
@@ -40,6 +44,9 @@ const SignInPage = () => {
           header: error.message,
           dismissible: true,
         });
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -79,7 +86,8 @@ const SignInPage = () => {
               form="signin-form"
               formAction="submit"
               variant="primary"
-              loadingText="Signing in..."
+              loading={isLoading}
+              loadingText="Signing in"
             >
               Signin
             </Button>

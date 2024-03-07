@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import { Account } from '@/web/types';
-import { useAuthStore } from '@/web/state-management';
+import { Account } from 'libs/web/web-shared-types/src';
+import { useAuthStore } from 'libs/web/web-shared-state-management/src';
 
 export const useAuthData = () => {
   const authenticated = Boolean(useAuthStore((s) => s.account));

@@ -1,0 +1,8 @@
+{
+  "name": "web-feature-courtreserve",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web/web-feature-courtreserve/src",
+  "projectType": "library",
+  "tags": ["scope:web", "type:feature"],
+  "targets": {}
+}
