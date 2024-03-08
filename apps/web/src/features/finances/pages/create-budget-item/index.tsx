@@ -7,7 +7,7 @@ import SpaceBetween from '@cloudscape-design/components/space-between';
 import { FormAutosuggest } from '../../../../common/components/form/form-autosuggest';
 import { FormInput } from '../../../../common/components/form/form-input';
 import { GenericForm } from '../../../../common/components/form/generic-form';
-import { useNotificationStore } from 'libs/web/web-shared-state-management/src';
+import { useNotificationStore } from '@/web/state-management';
 import { useCreateBudgetItemMutation } from '../budget-items/hooks';
 
 const budgetItemSchema = z.object({

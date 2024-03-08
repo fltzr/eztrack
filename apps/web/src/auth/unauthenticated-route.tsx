@@ -1,5 +1,5 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import { useAuthStore } from 'libs/web/web-shared-state-management/src';
+import { useAuthStore } from '@/web/state-management';
 
 export const UnauthenticatedRoute = () => {
   const location = useLocation();

@@ -1,9 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import AppLayout from '@cloudscape-design/components/app-layout';
-import {
-  useAuthStore,
-  useLayoutStore,
-} from 'libs/web/web-shared-state-management/src';
+import { useAuthStore, useLayoutStore } from '@/web/state-management';
 import { Header } from './header/index';
 import { Navigation } from './navigation';
 import { Notification } from './notification';

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import SideNavigation from '@cloudscape-design/components/side-navigation';
-import { useLayoutStore } from 'libs/web/web-shared-state-management/src';
+import { useLayoutStore } from '@/web/state-management';
 
 export const Navigation = () => {
   const navigate = useNavigate();

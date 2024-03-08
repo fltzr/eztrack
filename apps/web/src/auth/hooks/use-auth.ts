@@ -1,5 +1,5 @@
 import type { AxiosError } from 'axios';
-import { useAuthStore } from 'libs/web/web-shared-state-management/src';
+import { useAuthStore } from '@/web/state-management';
 import { useAuthData } from './use-auth-data';
 import { pageload, signin, signout } from '../auth-api';
 import { SignInSchemaType } from '../../features/auth/types/index';

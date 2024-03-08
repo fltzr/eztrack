@@ -1,5 +1,5 @@
 import { SignInSchemaType } from '../features/auth/types/index';
-import { Account } from 'libs/web/web-shared-types/src';
+import { Account } from '@/web/types';
 import { api } from '@/web/utils';
 
 type PageloadResponse = {

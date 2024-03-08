@@ -1,0 +1,8 @@
+{
+  "name": "web-courtreserve-ui",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/courtreserve/web/ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

@@ -5,7 +5,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { useAuth } from '../../../../auth/hooks/use-auth';
-import { useNotificationStore } from 'libs/web/web-shared-state-management/src';
+import { useNotificationStore } from '@/web/state-management';
 import { Component as SignInPage } from '.';
 
 vi.mock('../../../../auth/hooks/use-auth');
