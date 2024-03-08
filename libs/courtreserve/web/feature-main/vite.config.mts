@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   root: __dirname,
@@ -15,6 +16,10 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+    }),
+    visualizer({
+      filename: '../../../../visualizer/sourcemap-courtreserve-feature-main.html',
+      title: 'sourcemap-courtreserve-feature-main',
     }),
   ],
 
@@ -42,12 +47,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: [
-        'react',
-        'react-dom',
-        'react/jsx-runtime',
-        '@cloudscape-design/components',
-      ],
+      external: ['react', 'react-dom', '@cloudscape-design', 'zustand', 'axios'],
     },
   },
 
@@ -61,8 +61,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory:
-        '../../../../coverage/libs/web/courtreserve/feature-main',
+      reportsDirectory: '../../../../coverage/libs/web/courtreserve/feature-main',
       provider: 'v8',
     },
   },

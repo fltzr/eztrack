@@ -29,7 +29,11 @@ export default defineConfig(({ mode }) => {
       open: false,
     },
 
-    plugins: [react(), nxViteTsPaths(), visualizer()],
+    plugins: [
+      react(),
+      nxViteTsPaths(),
+      visualizer({ filename: '../../visualizer/source-map-web.html', title: 'source-map-web' }),
+    ],
 
     // Uncomment this if you are using workers.
     // worker: {

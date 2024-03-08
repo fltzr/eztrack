@@ -6,7 +6,8 @@
     "clean": "rimraf dist .nx/cache tmp logs node_modules",
     "update": "npx npm-check-updates -u && npm i --force",
     "dev": "nx run-many -t serve -p web api",
-    "build": "NODE_ENV=production nx run-many -t build -p web api"
+    "build": "NODE_ENV=production nx run-many -t build -p web api",
+    "start": "NODE_ENV=production nx run-many -t preview -p web api"
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.529.1",

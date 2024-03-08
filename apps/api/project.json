@@ -18,6 +18,14 @@
           "buildTarget": "api:build:production"
         }
       }
+    },
+    "preview": {
+      "executor": "@nx/webpack:dev-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "color": true,
+        "envFile": "../../.env"
+      }
     }
   },
   "tags": ["scope:api"]

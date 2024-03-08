@@ -4,10 +4,11 @@ import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../../node_modules/.vite/libs/shared/web/ui',
+  cacheDir: '../../../../node_modules/.vite/libs/shared/web/ui',
 
   plugins: [
     react(),
@@ -15,6 +16,10 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+    }),
+    visualizer({
+      filename: '../../../../visualizer/sourcemap-shared-web-ui.html',
+      title: 'sourcemap-shared-web-ui',
     }),
   ],
 
@@ -26,7 +31,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../../dist/libs/web/shared/ui',
+    outDir: '../../../../dist/libs/web/shared/ui',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -42,26 +47,21 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: [
-        'react',
-        'react-dom',
-        'react/jsx-runtime',
-        '@cloudscape-design/components',
-      ],
+      external: ['react', 'react-dom', '@cloudscape-design'],
     },
   },
 
   test: {
     globals: true,
     cache: {
-      dir: '../../../node_modules/.vitest',
+      dir: '../../../../node_modules/.vitest',
     },
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../../coverage/libs/web/shared/ui',
+      reportsDirectory: '../../../../coverage/libs/web/shared/ui',
       provider: 'v8',
     },
   },
