@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile.dev
+    ports:
+      - '4000:4000'
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile.dev
+    ports:
+      - '3000:3000'

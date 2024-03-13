@@ -1,0 +1,21 @@
+ARG NODE_VERSION=20.0.0
+
+FROM node:${NODE_VERSION}-alpine AS builder
+
+WORKDIR /app
+
+RUN --mount=type=bind,source=package.json,target=package.json \
+    --mount=type=bind,source=package-lock.json,target=package-lock.json \
+    --mount=type=cache,target=/root/.npm \
+    npm ci --include=dev --force
+
+RUN npm run build:api
+
+COPY --from=builder /app/dist/apps/api /usr/src/app
+
+RUN chown -R node /usr/src/app
+USER node
+
+EXPOSE 3000
+
+CMD node main.js

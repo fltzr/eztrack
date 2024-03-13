@@ -6,7 +6,7 @@ import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import { visualizer } from 'rollup-plugin-visualizer';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   root: __dirname,
   cacheDir: '../../../../node_modules/.vite/libs/shared/web/ui',
 
@@ -23,21 +23,26 @@ export default defineConfig({
     }),
   ],
 
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
+  optimizeDeps: {
+    exclude: [
+      'react',
+      'react-dom',
+      'axios',
+      '@cloudscape-design/components',
+      '@cloudscape-design/global-styles',
+    ],
+  },
 
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     outDir: '../../../../dist/libs/web/shared/ui',
+    sourcemap: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
     lib: {
-      // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
       name: 'web-shared-ui',
       fileName: 'index',
@@ -45,9 +50,16 @@ export default defineConfig({
       // Don't forget to update your package.json as well.
       formats: ['es', 'cjs'],
     },
+
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', '@cloudscape-design'],
+      external: [
+        'react',
+        'react-dom',
+        'axios',
+        '@cloudscape-design/components',
+        '@cloudscape-design/global-styles',
+      ],
     },
   },
 
@@ -65,4 +77,4 @@ export default defineConfig({
       provider: 'v8',
     },
   },
-});
+}));

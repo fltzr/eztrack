@@ -1,8 +1,7 @@
 /// <reference types='vitest' />
-import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig(({ mode }) => {
   console.log(`Building Web App in ${mode} mode.`);
@@ -29,19 +28,11 @@ export default defineConfig(({ mode }) => {
       open: false,
     },
 
-    plugins: [
-      react(),
-      nxViteTsPaths(),
-      visualizer({ filename: '../../visualizer/source-map-web.html', title: 'source-map-web' }),
-    ],
-
-    // Uncomment this if you are using workers.
-    // worker: {
-    //  plugins: [ nxViteTsPaths() ],
-    // },
+    plugins: [react(), nxViteTsPaths()],
 
     build: {
       outDir: '../../dist/apps/web',
+      sourcemap: true,
       emptyOutDir: true,
       reportCompressedSize: true,
       commonjsOptions: {

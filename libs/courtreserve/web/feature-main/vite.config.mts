@@ -32,6 +32,7 @@ export default defineConfig({
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     outDir: '../../../../dist/libs/web/courtreserve/feature-main',
+    sourcemap: true,
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -47,7 +48,14 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', '@cloudscape-design', 'zustand', 'axios'],
+      external: [
+        'react',
+        'react-dom',
+        '@cloudscape-design/components',
+        '@cloudscape-design/global-styles',
+        'zustand',
+        'axios',
+      ],
     },
   },
 

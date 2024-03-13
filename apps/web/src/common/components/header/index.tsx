@@ -25,12 +25,9 @@ export const Header = () => {
   const user = useAuthStore((s) => s.account);
   const setUser = useAuthStore((s) => s.setAccount);
 
-  const addNotification = useNotificationStore(
-    (state) => state.addNotification,
-  );
+  const addNotification = useNotificationStore((state) => state.addNotification);
 
-  const [userPreferencesModalOpen, setUserPreferencesModalOpen] =
-    useState(false);
+  const [userPreferencesModalOpen, setUserPreferencesModalOpen] = useState(false);
 
   return (
     <>
@@ -46,61 +43,62 @@ export const Header = () => {
               },
             }}
             utilities={
-              authenticated
-                ? [
-                    {
-                      type: 'button',
-                      iconName: 'settings',
-                      onClick: () => {
-                        setUserPreferencesModalOpen(!userPreferencesModalOpen);
-                      },
+              authenticated ?
+                [
+                  {
+                    type: 'button',
+                    iconName: 'settings',
+                    onClick: () => {
+                      setUserPreferencesModalOpen(!userPreferencesModalOpen);
                     },
-                    {
-                      type: 'menu-dropdown',
-                      text: `Hello, ${user?.firstName}!`,
+                    ariaLabel: 'User preferences',
+                  },
+                  {
+                    type: 'menu-dropdown',
+                    text: `Hello, ${user?.firstName}!`,
+                    description: user?.email,
+                    items: [
+                      {
+                        text: 'Sign out',
+                        id: 'user-sign-out',
+                        externalIconAriaLabel: 'Sign out',
+                      },
+                    ],
+                    onItemClick: (event) => {
+                      if (event.detail.id !== 'user-sign-out') {
+                        console.log(event.detail.id);
+                      }
+                      (async () => {
+                        const { status } = await api.post('/signout');
 
-                      description: user?.email,
-                      items: [
-                        {
-                          text: 'Sign out',
-                          id: 'user-sign-out',
-                        },
-                      ],
-                      onItemClick: (event) => {
-                        if (event.detail.id !== 'user-sign-out') {
-                          console.log(event.detail.id);
+                        if (status === 200) {
+                          setUser(null);
+
+                          navigate('/signin', {
+                            replace: true,
+                          });
+
+                          addNotification({
+                            type: 'success',
+                            id: `notification-user-sign-out-${Date.now()}`,
+                            header: 'Successfully signed out.',
+                            autoDismiss: true,
+                          });
+                        } else {
+                          addNotification({
+                            type: 'error',
+                            id: `notification-user-sign-out-error-${Date.now()}`,
+                            header: 'Unable to signout. Please try again.',
+                            dismissible: true,
+                          });
                         }
-                        (async () => {
-                          const { status } = await api.post('/signout');
-
-                          if (status === 200) {
-                            setUser(null);
-
-                            navigate('/signin', {
-                              replace: true,
-                            });
-
-                            addNotification({
-                              type: 'success',
-                              id: `notification-user-sign-out-${Date.now()}`,
-                              header: 'Successfully signed out.',
-                              autoDismiss: true,
-                            });
-                          } else {
-                            addNotification({
-                              type: 'error',
-                              id: `notification-user-sign-out-error-${Date.now()}`,
-                              header: 'Unable to signout. Please try again.',
-                              dismissible: true,
-                            });
-                          }
-                        })().catch((error) => {
-                          console.error(error);
-                        });
-                      },
+                      })().catch((error) => {
+                        console.error(error);
+                      });
                     },
-                  ]
-                : undefined
+                  },
+                ]
+              : undefined
             }
           />
         </div>

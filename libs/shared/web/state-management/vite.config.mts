@@ -8,7 +8,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../../../node_modules/.vite/libs/shared/web/state-management`',
+  cacheDir: '../../../../node_modules/.vite/libs/shared/web/state-management',
 
   plugins: [
     react(),
@@ -31,7 +31,8 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../../../dist/libs/shared/web/state-management`',
+    sourcemap: true,
+    outDir: '../../../../dist/libs/shared/web/state-management',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -47,7 +48,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'zustand', '@cloudscape-design/components'],
+      external: ['react', 'react-dom', 'zustand'],
     },
   },
 
@@ -61,7 +62,7 @@ export default defineConfig({
 
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../../../coverage/libs/shared/web/state-management`',
+      reportsDirectory: '../../../../coverage/libs/shared/web/state-management',
       provider: 'v8',
     },
   },

@@ -31,6 +31,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
+    sourcemap: true,
     outDir: '../../../../dist/libs/shared/web/types',
     reportCompressedSize: true,
     commonjsOptions: {

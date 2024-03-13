@@ -1,8 +1,5 @@
 import { fetchWithTypes } from '../../core/utils/typesafe-fetch';
-import {
-  CourtreserveEventApiResponse,
-  CourtreserveEventType,
-} from './courtreserve.types';
+import { CourtreserveEventApiResponse, CourtreserveEventType } from './courtreserve.types';
 import {
   filterEventsByDayOfWeek,
   filterEventsByEventId,
@@ -22,10 +19,7 @@ import { logger } from '../../core/utils/winston-logger';
 import { sendEmail } from '../../core/utils/node-mailer';
 import { users } from '../../core/database/schema/user';
 import { eq } from 'drizzle-orm';
-import {
-  notifications,
-  InsertNotification,
-} from '../../core/database/schema/notification';
+import { notifications, InsertNotification } from '../../core/database/schema/notification';
 
 export const fetchCourtreseveEvents = async (
   filters: {
@@ -48,22 +42,19 @@ export const fetchCourtreseveEvents = async (
         newrelic:
           'eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjM1NDgyMDQiLCJhcCI6IjExMDMxOTQ4ODUiLCJpZCI6IjQ4YTY1NjBkODlhYjJiOTUiLCJ0ciI6Ijg0YzA4M2Q1Mzg2N2M3MjRhODU0ODg5ZTdlNTgxMjg5IiwidGkiOjE3MDg3MTk5MzA4MTl9fQ==',
         pragma: 'no-cache',
-        'sec-ch-ua':
-          '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
+        'sec-ch-ua': '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"macOS"',
         'sec-fetch-dest': 'empty',
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         traceparent: '00-84c083d53867c724a854889e7e581289-48a6560d89ab2b95-01',
-        tracestate:
-          '3548204@nr=0-1-3548204-1103194885-48a6560d89ab2b95----1708719930819',
+        tracestate: '3548204@nr=0-1-3548204-1103194885-48a6560d89ab2b95----1708719930819',
         'x-newrelic-id': 'VwMDWVRTDBABVFRSBAcDUlMD',
         'x-requested-with': 'XMLHttpRequest',
         cookie:
           'ASP.NET_SessionId=fyifmtsjhty3osnztjyppz1l; __stripe_mid=2f0b4633-171b-4887-a751-957de568b41b5e9973; .AspNet.ApplicationCookie=QiJmUiGttjeTYCMQm3RsuZ4z6mtkAPl_CCdAyts52naIlwxPR8NyomSnItHsy0bnBsaQtnHHpJxHOJaaForG_LLtSWQqJXqXePEhZnkVf57VK247MtXBonrkIFO_5rndIGZMfkIXsYp0aKxpWN7xBTk3l14rnck4f0slHxL1yfxxJ1nxgnsEdow2Hw8apYxedK5CmEtg725MspCK8k2a1Qew6Clo00YWX6h4Q3FpPkRni7qOwCFR5ySbkPpaKgSZNIntmYyqHxkD9Kz-_4_3B_ygyDTi7voaQawYRFacwAeBcyrmbiJPt0qI-y5TWUBPfGWS0zHQzlbawXZkgUQFyvvfXr2ksi76BTmx2TC0KHHSTQCUyqFKwG9RgKPuho_dSbanPAAZEDe-q9Vtcc9-sXczTIecysGZ0ScK35fBuSvX8lrOINriXNQlfRb3MRdoZX030MKQ12tf4Rg0MMt6L4mrDkv6SJlvYrbIo-dB38PNox3VKqPB8TGGk0q1EIegVMZSWsv8c3RnbvZGEx8XHVmPFzyNWhNWTB-a4CEhX_CqaTKv; EventsCalendarViewType=Month; __stripe_sid=bd0d8b0e-1c64-4d80-a41a-3864c9c5864b9e1bca; IsPayNowVisible=false',
-        Referer:
-          'https://app.courtreserve.com/Online/Calendar/Events/6943/Month',
+        Referer: 'https://app.courtreserve.com/Online/Calendar/Events/6943/Month',
         'Referrer-Policy': 'strict-origin-when-cross-origin',
       },
       body: 'sort=&group=&filter=&jsonData=%7B%22startDate%22%3A%222024-01-28T05%3A00%3A00.000Z%22%2C%22end%22%3A%222024-03-09T05%3A00%3A00.000Z%22%2C%22Date%22%3A%22Sun%2C+28+Jan+2024+05%3A00%3A00+GMT%22%2C%22orgId%22%3A%226943%22%2C%22TimeZone%22%3A%22America%2FNew_York%22%2C%22KendoStart%22%3A%7B%22Year%22%3A2024%2C%22Month%22%3A1%2C%22Day%22%3A28%7D%2C%22KendoEnd%22%3A%7B%22Year%22%3A2024%2C%22Month%22%3A3%2C%22Day%22%3A9%7D%2C%22Categories%22%3A%5B%5D%2C%22CostTypeId%22%3A%2289704%22%2C%22MemberId%22%3A%222023983%22%2C%22FamilyId%22%3A%22871040%22%2C%22FamilyMemberIds%22%3A%222023983%22%2C%22EventSessionIds%22%3A%5B%5D%7D',
@@ -74,24 +65,15 @@ export const fetchCourtreseveEvents = async (
   const transformedResponse = transformApiResponse(response);
 
   if (filters.eventType) {
-    transformedResponse.events = filterEventsByEventType(
-      transformedResponse.events,
-      filters.eventType,
-    );
+    transformedResponse.events = filterEventsByEventType(transformedResponse.events, filters.eventType);
   }
 
   if (filters.eventName) {
-    transformedResponse.events = filterEventsByEventName(
-      transformedResponse.events,
-      filters.eventName,
-    );
+    transformedResponse.events = filterEventsByEventName(transformedResponse.events, filters.eventName);
   }
 
   if (filters.eventId) {
-    transformedResponse.events = filterEventsByEventId(
-      transformedResponse.events,
-      filters.eventId,
-    );
+    transformedResponse.events = filterEventsByEventId(transformedResponse.events, filters.eventId);
   }
 
   if (filters.timeDisplay) {
@@ -109,10 +91,7 @@ export const fetchCourtreseveEvents = async (
   }
 
   if (filters.dayOfWeek) {
-    transformedResponse.events = filterEventsByDayOfWeek(
-      transformedResponse.events,
-      filters.dayOfWeek,
-    );
+    transformedResponse.events = filterEventsByDayOfWeek(transformedResponse.events, filters.dayOfWeek);
   }
 
   transformedResponse.total = transformedResponse.events.length;
@@ -145,17 +124,12 @@ export const fetchAndDispatchEventSubscriptions = async () => {
   const date = DateTime.now();
 
   // Fetch all event subscriptions
-  const subscriptions = await db
-    .select()
-    .from(courtreserveEventSubscriptions)
-    .execute();
+  const subscriptions = await db.select().from(courtreserveEventSubscriptions).execute();
 
   // Fetch all events
   const { events } = await fetchCourtreseveEvents();
 
-  logger.info(
-    `Fetched ${events.length} events and ${subscriptions.length} subscriptions`,
-  );
+  logger.info(`Fetched ${events.length} events and ${subscriptions.length} subscriptions`);
 
   events.forEach((event) => {
     // For each event, filter out subscriptions that match the event
@@ -173,9 +147,7 @@ export const fetchAndDispatchEventSubscriptions = async () => {
       });
 
       if (!user.email) {
-        logger.error(
-          `User ${user.id} does not have an email address. Skipping...`,
-        );
+        logger.error(`User ${user.id} does not have an email address. Skipping...`);
         return;
       }
 
@@ -188,9 +160,7 @@ export const fetchAndDispatchEventSubscriptions = async () => {
 
       // If the event is full, send a notification to the user
       if (subscription.notify_on_registration_open) {
-        logger.info(
-          `Sending registration open notification for event ${event.eventId}`,
-        );
+        logger.info(`Sending registration open notification for event ${event.eventId}`);
 
         sendEmail({
           to: user.email,
@@ -225,14 +195,8 @@ export const fetchAndDispatchEventSubscriptions = async () => {
           });
       }
 
-      if (
-        subscription.notify_on_spot_available &&
-        !event.isMemberRegistered &&
-        !event.isFull
-      ) {
-        logger.info(
-          `Sending spot available notification for event ${event.eventId}`,
-        );
+      if (subscription.notify_on_spot_available && !event.isMemberRegistered && !event.isFull) {
+        logger.info(`Sending spot available notification for event ${event.eventId}`);
 
         sendEmail({
           to: user.email,

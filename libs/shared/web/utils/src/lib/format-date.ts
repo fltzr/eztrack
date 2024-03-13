@@ -6,8 +6,9 @@ export const formatISODate = (isoDateTime: string) => {
 
   const isFuture = targetDate > now;
 
-  const diff = isFuture
-    ? targetDate.diff(now, ['days', 'hours', 'minutes', 'seconds']).toObject()
+  const diff =
+    isFuture ?
+      targetDate.diff(now, ['days', 'hours', 'minutes', 'seconds']).toObject()
     : now.diff(targetDate, ['days', 'hours', 'minutes', 'seconds']).toObject();
 
   const days = diff.days ?? 0;

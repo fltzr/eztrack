@@ -6,15 +6,10 @@ import Grid from '@cloudscape-design/components/grid';
 import Input, { type InputProps } from '@cloudscape-design/components/input';
 import { FormBaseProps } from './form-base-props';
 
-type FormInputProps<T extends FieldValues> = Omit<
-  InputProps,
-  'onChange' | 'name' | 'value'
-> &
+type FormInputProps<T extends FieldValues> = Omit<InputProps, 'onChange' | 'name' | 'value'> &
   FormBaseProps<T> & { sensitive?: boolean };
 
-export const FormInput = <T extends FieldValues>({
-  ...props
-}: FormInputProps<T>) => {
+export const FormInput = <T extends FieldValues>({ ...props }: FormInputProps<T>) => {
   const {
     control,
     formState: { errors },
@@ -32,11 +27,8 @@ export const FormInput = <T extends FieldValues>({
           stretch={props.stretch}
           errorText={errors[props.name]?.message as string | undefined}
         >
-          {props.sensitive ? (
-            <Grid
-              disableGutters
-              gridDefinition={[{ colspan: 11 }, { colspan: 1 }]}
-            >
+          {props.sensitive ?
+            <Grid disableGutters gridDefinition={[{ colspan: 11 }, { colspan: 1 }]}>
               <Input
                 {...field}
                 {...props}
@@ -47,16 +39,20 @@ export const FormInput = <T extends FieldValues>({
                 }}
               />
               <Button
-                variant="icon"
-                formAction="none"
+                variant='icon'
+                formAction='none'
                 iconName={isInputVisible ? 'lock-private' : 'unlocked'}
+                ariaLabel='Toggle input visibility'
+                ariaExpanded={isInputVisible}
+                ariaControls='sensitive-input'
+                ariaDescribedby='sensitive-input'
+                iconAlt='Toggle input visibility'
                 onClick={() => {
                   setIsInputVisible((prev) => !prev);
                 }}
               />
             </Grid>
-          ) : (
-            <Input
+          : <Input
               {...field}
               {...props}
               data-testid={props.testId}
@@ -65,7 +61,7 @@ export const FormInput = <T extends FieldValues>({
                 field.onChange(event.detail.value);
               }}
             />
-          )}
+          }
         </FormField>
       )}
     />

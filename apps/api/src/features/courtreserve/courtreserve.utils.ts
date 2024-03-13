@@ -48,13 +48,8 @@ export const transformApiResponse = (
         eventType === CourtreserveEventType.PickleballLeagueAdult ||
         eventType === CourtreserveEventType.PickleballDropIn,
     )
-    .filter(
-      ({ title }) => title.includes('(4.0+)') || title.includes('(3.5-4.0+)'),
-    )
-    .sort(
-      (a, b) =>
-        DateTime.fromISO(b.start).diff(DateTime.fromISO(a.start)).milliseconds,
-    );
+    .filter(({ title }) => title.includes('(4.0+)') || title.includes('(3.5-4.0+)'))
+    .sort((a, b) => DateTime.fromISO(b.start).diff(DateTime.fromISO(a.start)).milliseconds);
 
   console.log(`Returning ${transformedData.length} events`);
 
@@ -69,27 +64,17 @@ export const filterEventsByEventType = (
   eventType: CourtreserveEventType,
 ) => events?.filter((event) => event.eventType === eventType);
 
-export const filterEventsByEventName = (
-  events: CourtreserveEventTransformed[],
-  eventName: string,
-) => events?.filter((event) => event.eventName === eventName);
+export const filterEventsByEventName = (events: CourtreserveEventTransformed[], eventName: string) =>
+  events?.filter((event) => event.eventName === eventName);
 
-export const filterEventsByEventId = (
-  events: CourtreserveEventTransformed[],
-  eventId: string,
-) => events?.filter((event) => event.eventId === eventId);
+export const filterEventsByEventId = (events: CourtreserveEventTransformed[], eventId: string) =>
+  events?.filter((event) => event.eventId === eventId);
 
-export const filterEventsBySkillLevel = (
-  events: CourtreserveEventTransformed[],
-  skillLevel: string,
-) => events?.filter((event) => event.title.includes(skillLevel));
+export const filterEventsBySkillLevel = (events: CourtreserveEventTransformed[], skillLevel: string) =>
+  events?.filter((event) => event.title.includes(skillLevel));
 
-export const filterEventsByTimeDisplay = (
-  events: CourtreserveEventTransformed[],
-  timeDisplay: string,
-) => events?.filter((event) => event.timeDisplay === timeDisplay);
+export const filterEventsByTimeDisplay = (events: CourtreserveEventTransformed[], timeDisplay: string) =>
+  events?.filter((event) => event.timeDisplay === timeDisplay);
 
-export const filterEventsByDayOfWeek = (
-  events: CourtreserveEventTransformed[],
-  dayOfWeek: string,
-) => events?.filter((event) => event.title.includes(dayOfWeek));
+export const filterEventsByDayOfWeek = (events: CourtreserveEventTransformed[], dayOfWeek: string) =>
+  events?.filter((event) => event.title.includes(dayOfWeek));
