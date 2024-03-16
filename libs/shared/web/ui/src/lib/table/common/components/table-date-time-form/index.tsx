@@ -9,7 +9,7 @@ import TimeInput from '@cloudscape-design/components/time-input';
 export const isValidIsoDate = (isoDate: string) => DateTime.fromISO(isoDate).isValid;
 
 export const parseDateTimeFilter = (filter: string) => {
-  // Using moment to parse and validate the date and time
+  // Using luxon to parse and validate the date and time
   const luxonDate = DateTime.fromISO(filter);
 
   if (!luxonDate.isValid) {
