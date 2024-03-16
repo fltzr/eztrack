@@ -32,7 +32,6 @@ export default defineConfig({
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     sourcemap: true,
-    outDir: '../../../../dist/libs/shared/web/types',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
@@ -40,7 +39,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'types',
+      name: 'web-shared-types',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.

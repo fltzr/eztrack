@@ -31,7 +31,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../../../dist/libs/web/courtreserve/feature-main',
+    outDir: '../../../../dist/apps/web/courtreserve/feature-main',
     sourcemap: true,
     reportCompressedSize: true,
     commonjsOptions: {

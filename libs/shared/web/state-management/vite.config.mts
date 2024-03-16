@@ -32,7 +32,7 @@ export default defineConfig({
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     sourcemap: true,
-    outDir: '../../../../dist/libs/shared/web/state-management',
+    outDir: '../../../../dist/apps/web/state-management',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,
