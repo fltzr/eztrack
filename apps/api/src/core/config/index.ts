@@ -1,7 +1,11 @@
 import { config } from 'dotenv';
-import { bool, cleanEnv, port, str, url } from 'envalid';
+import { cleanEnv, bool, port, str, url } from 'envalid';
+import { resolve } from 'path';
+import { cwd } from 'process';
 
-config({ path: '.env' });
+console.info(`cwd: ${cwd()}`);
+
+config({ path: resolve(cwd(), '.env.local'), debug: true });
 
 export const env = cleanEnv(process.env, {
   // General configuration
@@ -10,7 +14,7 @@ export const env = cleanEnv(process.env, {
   SESSION_SECRET: str(),
   LOG_FORMAT: str({ choices: ['combined', 'dev', 'simple'] }),
   LOG_DIR: str({ devDefault: '../../../logs' }),
-  ORIGIN: url({ devDefault: 'http://localhost:3000' }),
+  ORIGIN: url(),
   CREDENTIALS: bool({ default: true }),
 
   // PostgreSQL configuration
@@ -20,12 +24,12 @@ export const env = cleanEnv(process.env, {
   OIDC_ISSUER: url(),
   OIDC_CLIENT_ID: str(),
   OIDC_CLIENT_SECRET: str(),
-  OIDC_REDIRECT_URI: url({ devDefault: 'http://localhost:3000' }),
-  OIDC_SCOPE: str({ default: 'code' }),
-  OIDC_RESPONSE_TYPE: str({ default: 'openid profile' }),
+  OIDC_REDIRECT_URI: url({ devDefault: 'http://192.168.1.168:4000/' }),
+  OIDC_SCOPE: str(),
+  OIDC_RESPONSE_TYPE: str(),
   OIDC_RESPONSE_MODE: str(),
   OIDC_GRANT_TYPE: str(),
-  OIDC_USE_PKCE: bool({ default: true }),
+  OIDC_USE_PKCE: bool(),
 
   // Email service configuration
   EMAIL_HOST: str(),
@@ -34,3 +38,7 @@ export const env = cleanEnv(process.env, {
   EMAIL_USERNAME: str(),
   EMAIL_PASSWORD: str(),
 });
+
+if (env.isDev) {
+  console.table(env);
+}

@@ -1,13 +1,10 @@
-import {
-  type RouteObject,
-  createBrowserRouter,
-  Navigate,
-} from 'react-router-dom';
+import { type RouteObject, createBrowserRouter, Navigate } from 'react-router-dom';
 import { App } from '../../app';
 import { AuthenticatedRoute } from '../../auth/authenticated-route';
 import { UnauthenticatedRoute } from '../../auth/unauthenticated-route';
 import { RouteError } from '@/web/ui';
 import { courtreserveRoutes } from '@/web/courtreserve/feature-main';
+import { authenticationRoutes } from '@/auth-web-feature-main';
 
 const routes: RouteObject[] = [
   {
@@ -16,7 +13,7 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <Navigate replace to="/home" />,
+        element: <Navigate replace to='/home' />,
       },
       {
         element: <AuthenticatedRoute />,
@@ -36,15 +33,11 @@ const routes: RouteObject[] = [
                 children: [
                   {
                     index: true,
-                    lazy: () =>
-                      import('../../features/finances/pages/budget-items'),
+                    lazy: () => import('../../features/finances/pages/budget-items'),
                   },
                   {
                     path: 'create',
-                    lazy: () =>
-                      import(
-                        '../../features/finances/pages/create-budget-item'
-                      ),
+                    lazy: () => import('../../features/finances/pages/create-budget-item'),
                   },
                 ],
               },
@@ -54,18 +47,7 @@ const routes: RouteObject[] = [
       },
       {
         element: <UnauthenticatedRoute />,
-        children: [
-          {
-            path: 'signin',
-            lazy: () => import('../../features/auth/pages/signin'),
-          },
-          {
-            path: 'signup',
-          },
-          {
-            path: 'register',
-          },
-        ],
+        children: [...authenticationRoutes],
       },
     ],
   },

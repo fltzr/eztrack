@@ -15,8 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@/auth-web-feature-main": ["libs/auth/web/feature-main/src/index.ts"],
       "@/web/courtreserve/feature-main": ["libs/courtreserve/web/feature-main/src/index.ts"],
       "@/web/courtreserve/ui": ["libs/courtreserve/web/ui/src/index.ts"],
+      "@/web/shared/form": ["libs/shared/web/form/src/index.ts"],
       "@/web/state-management": ["libs/shared/web/state-management/src/index.ts"],
       "@/web/types": ["libs/shared/web/types/src/index.ts"],
       "@/web/ui": ["libs/shared/web/ui/src/index.ts"],

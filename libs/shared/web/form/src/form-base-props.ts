@@ -10,4 +10,6 @@ export type FormBaseProps<T> = {
   constraintText?: FormFieldProps['constraintText'];
   i18nString?: FormFieldProps['i18nStrings'];
   stretch?: FormFieldProps['stretch'];
+  control?: FormFieldProps['children'];
+  secondaryControl?: FormFieldProps['secondaryControl'];
 };

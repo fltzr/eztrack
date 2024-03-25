@@ -2,12 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [
-      "node",
-      "@nx/react/typings/cssmodule.d.ts",
-      "@nx/react/typings/image.d.ts",
-      "vite/client"
-    ]
+    "types": ["node", "@nx/react/typings/cssmodule.d.ts", "@nx/react/typings/image.d.ts", "vite/client"]
   },
   "exclude": [
     "src/**/*.spec.ts",
@@ -35,6 +30,14 @@
     "../../libs/web/web-shared-ui/src/lib/key-value-pair.tsx",
     "../../libs/web/web-shared-ui/src/lib/info-link.tsx",
     "../../libs/web/web-shared-utils/src/lib/types/table.ts",
-    "../../libs/web/web-shared-utils/src/lib/use-local-storage.ts"
+    "../../libs/web/web-shared-utils/src/lib/use-local-storage.ts",
+    "../../libs/shared/web/form/src/form-base-props.ts",
+    "../../libs/shared/web/form/src/form-date-picker.tsx",
+    "../../libs/shared/web/form/src/form-file-upload.tsx",
+    "../../libs/shared/web/form/src/form-input.tsx",
+    "../../libs/shared/web/form/src/form-select.tsx",
+    "../../libs/shared/web/form/src/form-text-area.tsx",
+    "../../libs/shared/web/form/src/form-tiles.tsx",
+    "../../libs/shared/web/form/src/generic-form.tsx"
   ]
 }

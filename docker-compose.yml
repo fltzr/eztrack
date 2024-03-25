@@ -1,14 +1,20 @@
 version: '3'
 services:
   web:
+    container_name: eztrack-web
     build:
       context: .
       dockerfile: apps/web/Dockerfile.dev
     ports:
       - '4000:4000'
-  api:
-    build:
-      context: .
-      dockerfile: apps/api/Dockerfile.dev
-    ports:
-      - '3000:3000'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=production
+  # api:
+  #   build:
+  #     context: .
+  #     dockerfile: apps/api/Dockerfile.dev
+  #   ports:
+  #     - '3000:3000'

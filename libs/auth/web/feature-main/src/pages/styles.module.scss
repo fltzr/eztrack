@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  > :first-child {
+    width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

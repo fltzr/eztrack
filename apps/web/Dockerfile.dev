@@ -1,36 +1,43 @@
+# Build stage
 
-ARG NODE_VERSION=20.11.1
+FROM docker.io/node:lts-alpine AS build
 
-# Use an official Node.js runtime as a base image
-FROM node:${NODE_VERSION}-alpine AS builder
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+ENV PORT=4000
 
 # Set the working directory
 WORKDIR /app
 
-# Copy package.json and pnpm-lock.json
-COPY package.json ./
-COPY pnpm-lock.yaml ./
+RUN addgroup --system web && \
+        adduser --system -G web web
 
-# Install dependencies
-RUN npm install --force
+COPY package.json pnpm-lock.yaml ./
+RUN chown -R web:web .
 
-# Copy the rest of your app's source code
+RUN apk add --no-cache python3 make g++
+RUN npx pnpm i --unsafe-perm
+
 COPY . .
+RUN npx pnpm run build:web
 
-# Build the web app specifically
-# Adjust the build command according to your package.json scripts
-RUN npm run build:web
+# Production stage
 
-# Use Caddy as a base image
-FROM caddy:2-alpine
+FROM docker.io/node:lts-alpine
 
-# Copy the nginx configuration file
-COPY ./apps/web/Caddyfile /etc/caddy/Caddyfile
+WORKDIR /app
 
-# Copy the built app to the nginx serve directory
-COPY --from=builder /app/dist/apps/web /usr/share/nginx/html
+RUN addgroup --system web && \
+        adduser --system -G web web
 
-# Expose port 80
-EXPOSE 80
+COPY --from=build /app/dist/apps/web ./web
+COPY package.json pnpm-lock.yaml ./
 
-# Caddy will automatically start serving the app
+RUN chown -R web:web .
+
+RUN apk add --no-cache python3 make g++
+RUN npx pnpm i --prod --unsafe-perm
+
+EXPOSE 4000
+
+CMD [ "npx", "vite", "preview" ]

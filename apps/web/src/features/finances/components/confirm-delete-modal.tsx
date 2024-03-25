@@ -5,8 +5,8 @@ import Button from '@cloudscape-design/components/button';
 import Header from '@cloudscape-design/components/header';
 import Modal from '@cloudscape-design/components/modal';
 import SpaceBetween from '@cloudscape-design/components/space-between';
-import { FormInput } from '../../../common/components/form/form-input';
-import { GenericForm } from '../../../common/components/form/generic-form';
+import { FormInput } from '../../../../../../libs/shared/web/form/src/form-input';
+import { GenericForm } from '../../../../../../libs/shared/web/form/src/generic-form';
 
 const DELETE_CONSENT_TEXT = 'confirm';
 
@@ -53,20 +53,16 @@ export const ConfirmDeleteModal = <T,>({
 
   return (
     <Modal
-      size="medium"
+      size='medium'
       visible={visible}
-      header={<Header variant="h2">Theme Settings</Header>}
+      header={<Header variant='h2'>Theme Settings</Header>}
       footer={
-        <Box float="right">
-          <SpaceBetween size="m" direction="horizontal">
-            <Button variant="normal" onClick={handleOnDismiss}>
+        <Box float='right'>
+          <SpaceBetween size='m' direction='horizontal'>
+            <Button variant='normal' onClick={handleOnDismiss}>
               Cancel
             </Button>
-            <Button
-              variant="primary"
-              form="confirm-delete-budget-item"
-              formAction="submit"
-            >
+            <Button variant='primary' form='confirm-delete-budget-item' formAction='submit'>
               Delete
             </Button>
           </SpaceBetween>
@@ -75,15 +71,15 @@ export const ConfirmDeleteModal = <T,>({
       onDismiss={onDismiss}
     >
       <Box margin={{ bottom: 'l' }}>
-        <SpaceBetween direction="vertical" size="xl">
+        <SpaceBetween direction='vertical' size='xl'>
           <GenericForm
             key={formKey}
-            formId="confirm-delete-budget-item"
+            formId='confirm-delete-budget-item'
             schema={confirmDeleteSchema}
             onSubmit={handleConfirmDelete}
           >
             <FormInput<ConfirmDeleteSchema>
-              name="confirmDelete"
+              name='confirmDelete'
               label={`Type "confirm" to delete the following ${resources.length} resource(s)`}
             />
           </GenericForm>

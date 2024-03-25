@@ -1,6 +1,7 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import MillionLint from '@million/lint';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig(({ mode }) => {
@@ -16,7 +17,7 @@ export default defineConfig(({ mode }) => {
       port: 4000,
       proxy: {
         '/api': {
-          target: 'http://192.168.1.155:3000',
+          target: 'http://192.168.1.168:3000/',
           changeOrigin: true,
         },
       },
@@ -28,7 +29,7 @@ export default defineConfig(({ mode }) => {
       open: false,
     },
 
-    plugins: [react(), nxViteTsPaths()],
+    plugins: [MillionLint.vite(), react(), nxViteTsPaths()],
 
     build: {
       outDir: '../../dist/apps/web',
