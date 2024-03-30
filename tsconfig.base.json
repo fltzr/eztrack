@@ -18,6 +18,7 @@
       "@/shared/api-types": ["libs/shared-api-types/src/index.ts"],
       "@/web/auth": ["libs/web-auth/src/index.ts"],
       "@/web/courtreserve": ["libs/web-courtreserve-main/src/index.ts"],
+      "@/web/finances-main": ["libs/web-finances-main/src/index.ts"],
       "@/web/form": ["libs/web-shared-form/src/index.ts"],
       "@/web/state-management": ["libs/web-shared-state-management/src/index.ts"],
       "@/web/types": ["libs/web-shared-types/src/index.ts"],

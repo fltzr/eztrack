@@ -3,6 +3,7 @@ import { App } from '../../app';
 import { authRoutes, ProtectedRoute, UnprotectedRoute } from '@/web/auth';
 import { RouteError } from '@/web/ui';
 import { courtreserveRoutes } from '@/web/courtreserve';
+import { financesRoutes } from '@/web/finances-main';
 
 const routes: RouteObject[] = [
   {
@@ -19,24 +20,7 @@ const routes: RouteObject[] = [
             lazy: () => import('../../features/home'),
           },
           ...courtreserveRoutes,
-          {
-            path: '/finances',
-            children: [
-              {
-                path: 'budget-items',
-                children: [
-                  {
-                    index: true,
-                    lazy: () => import('../../features/finances/pages/budget-items'),
-                  },
-                  {
-                    path: 'create',
-                    lazy: () => import('../../features/finances/pages/create-budget-item'),
-                  },
-                ],
-              },
-            ],
-          },
+          ...financesRoutes,
         ],
       },
       {
