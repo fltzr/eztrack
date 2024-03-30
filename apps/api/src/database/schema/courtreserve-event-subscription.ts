@@ -1,15 +1,8 @@
 import { relations } from 'drizzle-orm';
-import {
-  boolean,
-  foreignKey,
-  index,
-  pgTable,
-  timestamp,
-  uuid,
-  varchar,
-} from 'drizzle-orm/pg-core';
-import { users } from './user';
+import { boolean, foreignKey, index, pgTable, timestamp, uuid, varchar } from 'drizzle-orm/pg-core';
+
 import { notifications } from './notification';
+import { users } from './user';
 
 export const courtreserveEventSubscriptions = pgTable(
   'courtreserve_event_subscriptions',
@@ -19,9 +12,7 @@ export const courtreserveEventSubscriptions = pgTable(
       .references(() => users.id)
       .notNull(),
     eventId: varchar('event_id', { length: 255 }).notNull(),
-    notify_on_registration_open: boolean(
-      'notify_on_registration_open',
-    ).notNull(),
+    notify_on_registration_open: boolean('notify_on_registration_open').notNull(),
     notify_on_spot_available: boolean('notify_on_spot_available').notNull(),
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
   },
@@ -45,7 +36,5 @@ export const courtreserveEventSubscriptionRelations = relations(
   }),
 );
 
-export type InsertCourtreserveEventSubscription =
-  typeof courtreserveEventSubscriptions.$inferInsert;
-export type SelectCourtreserveEventSubscription =
-  typeof courtreserveEventSubscriptions.$inferSelect;
+export type InsertCourtreserveEventSubscription = typeof courtreserveEventSubscriptions.$inferInsert;
+export type SelectCourtreserveEventSubscription = typeof courtreserveEventSubscriptions.$inferSelect;

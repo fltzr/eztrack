@@ -1,7 +1,8 @@
-import { config } from 'dotenv';
-import { cleanEnv, bool, port, str, url } from 'envalid';
 import { resolve } from 'path';
 import { cwd } from 'process';
+
+import { config } from 'dotenv';
+import { cleanEnv, bool, port, str, url } from 'envalid';
 
 config({ path: resolve(cwd(), '.env.local') });
 

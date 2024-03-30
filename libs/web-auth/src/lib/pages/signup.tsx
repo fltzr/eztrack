@@ -1,17 +1,18 @@
+import Box from '@cloudscape-design/components/box';
+import Button from '@cloudscape-design/components/button';
+import ColumnLayout from '@cloudscape-design/components/column-layout';
 import Container from '@cloudscape-design/components/container';
-import { useNavigate } from 'react-router-dom';
-
 import Header from '@cloudscape-design/components/header';
 import Icon from '@cloudscape-design/components/icon';
-import ColumnLayout from '@cloudscape-design/components/column-layout';
 import SpaceBetween from '@cloudscape-design/components/space-between';
-import Box from '@cloudscape-design/components/box';
+import { useNavigate } from 'react-router-dom';
 
 import { FormDatePicker, FormInput, FormSelect, GenericForm } from '@/web/form';
-import styles from './styles.module.scss';
-import Button from '@cloudscape-design/components/button';
-import { type SignupSchema, signupSchema } from '../types';
+
 import { signup } from '../api';
+import { type SignupSchema, signupSchema } from '../types';
+
+import styles from './styles.module.scss';
 
 const SignupPage = () => {
   const navigate = useNavigate();

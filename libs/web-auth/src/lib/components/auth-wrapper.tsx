@@ -1,5 +1,7 @@
 import { ReactElement } from 'react';
+
 import { Loader } from '@/web/ui';
+
 import { useAuthCheck } from '../hooks/use-auth-check';
 import { useAuthStore } from '../store/use-auth-store';
 

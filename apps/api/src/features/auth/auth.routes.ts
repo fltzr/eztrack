@@ -1,4 +1,7 @@
 import { Router } from 'express';
+
+import { validate } from '@/api/core';
+
 import {
   pageloadController,
   signinController,
@@ -6,7 +9,6 @@ import {
   signoutController,
   userinfoController,
 } from './auth.controller';
-import { validate } from '@/api/core';
 import { signinSchema, signupSchema } from './auth.zschema';
 
 export const authRoutes = Router();

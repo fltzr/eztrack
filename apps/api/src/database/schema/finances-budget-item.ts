@@ -1,12 +1,6 @@
 import { relations } from 'drizzle-orm';
-import {
-  boolean,
-  numeric,
-  pgTable,
-  text,
-  timestamp,
-  uuid,
-} from 'drizzle-orm/pg-core';
+import { boolean, numeric, pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
+
 import { users } from './user';
 
 export const budgetItems = pgTable('budget_items', {
@@ -21,9 +15,7 @@ export const budgetItems = pgTable('budget_items', {
   // Meta
   isDeleted: boolean('is_deleted').notNull().default(false),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
-  updatedAt: timestamp('updated_at', { withTimezone: true })
-    .notNull()
-    .defaultNow(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 });
 
 export const budgetItemsRelations = relations(budgetItems, ({ one }) => ({

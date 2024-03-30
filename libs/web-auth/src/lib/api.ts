@@ -1,4 +1,5 @@
 import { api } from '@/web/utils';
+
 import type { AuthApiResponse, SigninSchema, SignupSchema } from './types';
 
 export const checkAuth = async () => {

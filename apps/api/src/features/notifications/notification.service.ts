@@ -1,6 +1,8 @@
-import { fetchAndDispatchEventSubscriptions } from '../courtreserve/courtreserve.service';
-import { logger } from '@/api/core';
 import cron from 'node-cron';
+
+import { logger } from '@/api/core';
+
+import { fetchAndDispatchEventSubscriptions } from '../courtreserve/courtreserve.service';
 
 // Run every minute
 export const notificationCron = cron.schedule(

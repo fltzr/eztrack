@@ -1,8 +1,9 @@
-import { useMemo } from 'react';
 import type { NonCancelableCustomEvent } from '@cloudscape-design/components';
 import type { TableProps } from '@cloudscape-design/components/table';
-import { useLocalStorage } from '@/web/utils';
+import { useMemo } from 'react';
+
 import type { TableColumnDefinition, TableColumnWidth } from '@/web/types';
+import { useLocalStorage } from '@/web/utils';
 
 type AddWidthToColumnDefinitionsParams<T> = {
   columnDefinitions: TableColumnDefinition<T>[];

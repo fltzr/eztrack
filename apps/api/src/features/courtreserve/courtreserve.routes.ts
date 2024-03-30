@@ -1,9 +1,7 @@
 import { Router } from 'express';
-import {
-  eventsController,
-  watchEventController,
-} from './courtreserve.controller';
 import { query } from 'express-validator';
+
+import { eventsController, watchEventController } from './courtreserve.controller';
 
 export const courtReserveRoutes = Router();
 

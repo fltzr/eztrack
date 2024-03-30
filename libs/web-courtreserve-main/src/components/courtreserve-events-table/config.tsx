@@ -1,9 +1,10 @@
-import { DateTime } from 'luxon';
 import Badge from '@cloudscape-design/components/badge';
 import Box from '@cloudscape-design/components/box';
 import Link from '@cloudscape-design/components/link';
-import { formatISODate } from '@/web/utils';
+import { DateTime } from 'luxon';
+
 import { TableColumnDefinition } from '@/web/types';
+import { formatISODate } from '@/web/utils';
 
 import { Countdown } from '../countdown';
 

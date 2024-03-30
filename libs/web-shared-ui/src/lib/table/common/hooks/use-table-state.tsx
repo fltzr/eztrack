@@ -4,14 +4,18 @@ import {
 } from '@cloudscape-design/collection-hooks';
 import type { CollectionPreferencesProps } from '@cloudscape-design/components/collection-preferences';
 import type { TableProps } from '@cloudscape-design/components/table';
-import { TableEmptyState, TableNoMatchState } from '../components/table-states';
-import { useColumnWidths } from './use-column-widths';
-import { useLocalStorage } from '@/web/utils';
+
 import { TableColumnDefinition } from '@/web/types';
+import { useLocalStorage } from '@/web/utils';
+
 import {
   DateTimeForm,
   formatDateTime,
 } from '../components/table-date-time-form';
+import { TableEmptyState, TableNoMatchState } from '../components/table-states';
+
+import { useColumnWidths } from './use-column-widths';
+
 
 const createDefaultPreferences = <T,>(
   columnDefinitions: TableColumnDefinition<T>[],

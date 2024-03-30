@@ -1,10 +1,12 @@
-import type { PropsWithChildren } from 'react';
 import AppLayout from '@cloudscape-design/components/app-layout';
+import type { PropsWithChildren } from 'react';
+
 import { useLayoutStore } from '@/web/state-management';
+import { Account } from '@/web/types';
+
 import { Header } from './header/index';
 import { Navigation } from './navigation';
 import { Notification } from './notification';
-import { Account } from '@/web/types';
 
 type LayoutProps = {
   user: Account | null;

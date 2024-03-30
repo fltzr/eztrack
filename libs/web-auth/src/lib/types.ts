@@ -1,5 +1,6 @@
-import { Account } from '@/web/types';
 import { z } from 'zod';
+
+import { Account } from '@/web/types';
 
 export type AuthApiResponse =
   | {

@@ -1,5 +1,5 @@
-import type { Path } from 'react-hook-form';
 import type { FormFieldProps } from '@cloudscape-design/components/form-field';
+import type { Path } from 'react-hook-form';
 
 export type FormBaseProps<T> = {
   name: Path<T>;

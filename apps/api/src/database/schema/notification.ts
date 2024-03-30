@@ -1,20 +1,9 @@
 import { relations } from 'drizzle-orm';
-import {
-  foreignKey,
-  index,
-  pgEnum,
-  pgTable,
-  text,
-  timestamp,
-  uuid,
-  varchar,
-} from 'drizzle-orm/pg-core';
+import { foreignKey, index, pgEnum, pgTable, text, timestamp, uuid, varchar } from 'drizzle-orm/pg-core';
+
 import { courtreserveEventSubscriptions } from './courtreserve-event-subscription';
 
-export const notificationStatusEnum = pgEnum('notification_status', [
-  'sent',
-  'failed',
-]);
+export const notificationStatusEnum = pgEnum('notification_status', ['sent', 'failed']);
 
 export const notifications = pgTable(
   'notifications',

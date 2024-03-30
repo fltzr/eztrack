@@ -1,4 +1,5 @@
 import { Request, Response, type NextFunction } from 'express';
+
 import {
   createBudgetItemService,
   deleteBudgetItemService,
@@ -12,9 +13,7 @@ export const getBudgetItemsController = async (
   next: NextFunction,
 ) => {
   try {
-    const budgetItems = await getUsersBudgetItemsService(
-      request.session.userid,
-    );
+    const budgetItems = await getUsersBudgetItemsService(request.session.userid);
 
     return response.status(200).json({
       budgetItems,
@@ -79,10 +78,7 @@ export const updateBudgetItemController = async (
   }
 };
 
-export const deleteBudgetItemController = async (
-  request: Request,
-  response: Response,
-) => {
+export const deleteBudgetItemController = async (request: Request, response: Response) => {
   try {
     const { data } = request.body as { data: string[] };
 

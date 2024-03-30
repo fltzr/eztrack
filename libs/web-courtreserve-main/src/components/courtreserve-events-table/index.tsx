@@ -1,5 +1,6 @@
 import { ReusableTable } from '@/web/ui';
 import { ReusableTableEventHandlers } from '@/web/ui';
+
 import { courtreserveEventDefinition, type CourtreserveEvent } from './config';
 
 type CourtreserveEventTableProps = {

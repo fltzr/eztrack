@@ -1,12 +1,14 @@
 import { Router } from 'express';
+
 import { validate } from '@/api/core';
-import { budgetItemSchema } from './finances.zschema';
+
+import { categoriesRoutes } from './categories/categories.routes';
 import {
   createBudgetItemController,
   deleteBudgetItemController,
   getBudgetItemsController,
 } from './finances.controller';
-import { categoriesRoutes } from './categories/categories.routes';
+import { budgetItemSchema } from './finances.zschema';
 
 export const financesRoutes = Router();
 

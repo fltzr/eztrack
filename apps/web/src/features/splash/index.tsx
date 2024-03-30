@@ -1,11 +1,12 @@
+import Grid from '@cloudscape-design/components/grid';
+import Header from '@cloudscape-design/components/header';
 import { useEffect } from 'react';
 
 import { useLayoutStore } from '@/web/state-management';
-import styles from './styles.module.scss';
-import Header from '@cloudscape-design/components/header';
 
 import logo from '../../../public/eztrack.png';
-import Grid from '@cloudscape-design/components/grid';
+
+import styles from './styles.module.scss';
 
 const SplashPage = () => {
   const layout = useLayoutStore((s) => s.setState);

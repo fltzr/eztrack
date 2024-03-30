@@ -1,5 +1,6 @@
-import { useCallback, useEffect } from 'react';
 import Flashbar from '@cloudscape-design/components/flashbar';
+import { useCallback, useEffect } from 'react';
+
 import { useNotificationStore } from '@/web/state-management';
 
 export const Notification = () => {

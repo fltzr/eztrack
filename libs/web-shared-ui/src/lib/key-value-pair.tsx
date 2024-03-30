@@ -1,5 +1,5 @@
-import type { PropsWithChildren } from 'react';
 import Box from '@cloudscape-design/components/box';
+import type { PropsWithChildren } from 'react';
 
 type KeyValuePairProps = {
   label: string;

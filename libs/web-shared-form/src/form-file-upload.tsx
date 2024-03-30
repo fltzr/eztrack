@@ -1,3 +1,7 @@
+import FileUpload, {
+  type FileUploadProps,
+} from '@cloudscape-design/components/file-upload';
+import FormField from '@cloudscape-design/components/form-field';
 import {
   useFormContext,
   Controller,
@@ -5,10 +9,7 @@ import {
   type Path,
   type PathValue,
 } from 'react-hook-form';
-import FileUpload, {
-  type FileUploadProps,
-} from '@cloudscape-design/components/file-upload';
-import FormField from '@cloudscape-design/components/form-field';
+
 import { FormBaseProps } from './form-base-props';
 
 type FormFileUploadProps<T extends FieldValues> = Omit<

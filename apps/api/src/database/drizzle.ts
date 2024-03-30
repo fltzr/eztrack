@@ -1,12 +1,12 @@
-import { Pool } from 'pg';
 import { NodePgDatabase, drizzle } from 'drizzle-orm/node-postgres';
+import { Pool } from 'pg';
 
-import { env } from '../config/index';
+import { env } from '@/api/core';
 
-import { users } from './schema/user';
-import { budgetItems } from './schema/finances-budget-item';
 import { courtreserveEventSubscriptions } from './schema/courtreserve-event-subscription';
+import { budgetItems } from './schema/finances-budget-item';
 import { notifications } from './schema/notification';
+import { users } from './schema/user';
 
 let pool: Pool;
 let db: NodePgDatabase<{
@@ -38,9 +38,7 @@ export const initializeDrizzleInstance = async () => {
 
 export const PostgresqlPool = () => {
   if (!pool) {
-    throw new Error(
-      'PostgreSQL pool not initialized. Call initializeDrizzleInstance() first.',
-    );
+    throw new Error('PostgreSQL pool not initialized. Call initializeDrizzleInstance() first.');
   }
 
   return pool;
@@ -48,9 +46,7 @@ export const PostgresqlPool = () => {
 
 export const DrizzleInstance = () => {
   if (!db) {
-    throw new Error(
-      'Drizzle ORM instance not initialized. Call initializeDrizzleInstance() first.',
-    );
+    throw new Error('Drizzle ORM instance not initialized. Call initializeDrizzleInstance() first.');
   }
 
   return db;

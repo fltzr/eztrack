@@ -1,5 +1,6 @@
 // morganConfig.ts
 import morgan, { StreamOptions } from 'morgan';
+
 import { logger } from '../utils/winston-logger';
 
 // Stream configuration for morgan

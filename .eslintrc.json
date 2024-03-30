@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "import"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -15,6 +15,44 @@
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "import/order": [
+          "error",
+          {
+            "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            },
+            "pathGroups": [
+              {
+                "pattern": "@cloudscape-design/**",
+                "group": "external",
+                "position": "after"
+              },
+              {
+                "pattern": "{react,react-dom,react-router-dom}",
+                "group": "external",
+                "position": "before"
+              },
+              {
+                "pattern": "@/{api,web}/**",
+                "group": "internal",
+                "position": "before"
+              },
+              {
+                "pattern": "../../**",
+                "group": "parent",
+                "position": "before"
+              },
+              {
+                "pattern": "./**",
+                "group": "sibling",
+                "position": "before"
               }
             ]
           }

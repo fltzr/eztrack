@@ -1,4 +1,5 @@
 import { Client, Issuer } from 'openid-client';
+
 import { env } from '../config/index';
 
 let oidc: Client | null = null;

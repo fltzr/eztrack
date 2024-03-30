@@ -1,7 +1,8 @@
 import Box from '@cloudscape-design/components/box';
 import Container from '@cloudscape-design/components/container';
-import { useLayoutStore } from '@/web/state-management';
+
 import { useAuthStore } from '@/web/auth';
+import { useLayoutStore } from '@/web/state-management';
 
 const Home = () => {
   const layoutState = useLayoutStore();

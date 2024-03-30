@@ -1,14 +1,15 @@
-import { useCallback, useMemo, useState } from 'react';
-import { capitalize, isEmpty } from 'lodash-es';
 import Pagination from '@cloudscape-design/components/pagination';
 import PropertyFilter from '@cloudscape-design/components/property-filter';
 import Table from '@cloudscape-design/components/table';
-import { getHeaderCounterText, getTextFilterCounterText } from './common/utils/table-utils';
-import { useTableState } from './common/hooks/use-table-state';
+import { capitalize, isEmpty } from 'lodash-es';
+import { useCallback, useMemo, useState } from 'react';
+
 import { FullPageHeader, type FullPageHeaderProps } from './common/components/table-header';
 import { ManualRefresh } from './common/components/table-manual-refresh-button';
 import { Preferences } from './common/components/table-preferences';
+import { useTableState } from './common/hooks/use-table-state';
 import type { ReusableTableProps } from './common/table-props';
+import { getHeaderCounterText, getTextFilterCounterText } from './common/utils/table-utils';
 
 export const ReusableTable = <T extends { id: string }>({
   selectedItems = [],

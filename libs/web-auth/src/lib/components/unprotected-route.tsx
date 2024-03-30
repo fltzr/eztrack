@@ -1,5 +1,7 @@
-import { Loader } from '@/web/ui';
 import { Navigate, Outlet } from 'react-router-dom';
+
+import { Loader } from '@/web/ui';
+
 import { useAuthStore } from '../store/use-auth-store';
 
 export const UnprotectedRoute = () => {

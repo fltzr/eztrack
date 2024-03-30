@@ -1,12 +1,14 @@
 /* eslint-disable react/no-multi-comp */
+import TopNavigation, { TopNavigationProps } from '@cloudscape-design/components/top-navigation';
 import { useState, type PropsWithChildren } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
-import TopNavigation, { TopNavigationProps } from '@cloudscape-design/components/top-navigation';
+
 import { useNotificationStore } from '@/web/state-management';
+import { Account } from '@/web/types';
+
 import { UserPreferencesModal } from './preferences-modal/index';
 import styles from './styles.module.css';
-import { Account } from '@/web/types';
 
 const HeaderPortal = ({ children }: PropsWithChildren) => {
   const dom = document.querySelector('#h');

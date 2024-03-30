@@ -1,14 +1,15 @@
-import express, { Application, json, urlencoded } from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
-import hpp from 'hpp';
-import helmet from 'helmet';
 import compression from 'compression';
-import cookieParser from 'cookie-parser';
-import session from 'express-session';
 import connectPgSimple from 'connect-pg-simple';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import express, { Application, json, urlencoded } from 'express';
+import session from 'express-session';
+import helmet from 'helmet';
+import hpp from 'hpp';
+import morgan from 'morgan';
 
 import { env, logger, stream, initializeOpenIDConnectClient } from '@/api/core';
+
 import { PostgresqlPool, initializeDrizzleInstance } from './database/drizzle';
 import { router } from './features/routes';
 // import { notificationCron } from '@features/notifications/notification.service';

@@ -1,8 +1,9 @@
-import { useFormContext, type FieldValues, Controller } from 'react-hook-form';
 import FormField from '@cloudscape-design/components/form-field';
 import Textarea, {
   type TextareaProps,
 } from '@cloudscape-design/components/textarea';
+import { useFormContext, type FieldValues, Controller } from 'react-hook-form';
+
 import { FormBaseProps } from './form-base-props';
 
 type FormTextareaProps<T extends FieldValues> = Omit<

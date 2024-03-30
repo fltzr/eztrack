@@ -1,5 +1,7 @@
 import { ReusableTable, type ReusableTableEventHandlers } from '@/web/ui';
+
 import type { BudgetItem } from '../../types';
+
 import { budgetItemColumnDefinitions } from './config';
 
 type BudgetItemsTableProps = {

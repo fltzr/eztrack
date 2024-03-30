@@ -1,8 +1,8 @@
+import Form, { type FormProps } from '@cloudscape-design/components/form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import type { PropsWithChildren } from 'react';
 import { FormProvider, useForm, type FieldValues } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import type { z } from 'zod';
-import Form, { type FormProps } from '@cloudscape-design/components/form';
 
 type GenericFormProps<Schema> = {
   schema: z.ZodType<Schema>;

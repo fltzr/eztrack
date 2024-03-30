@@ -1,5 +1,5 @@
-import { create } from 'zustand';
 import type { BreadcrumbGroupProps } from '@cloudscape-design/components/breadcrumb-group';
+import { create } from 'zustand';
 
 type LayoutStore = {
   domainTitle: string;

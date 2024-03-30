@@ -1,4 +1,5 @@
 import type { TableColumnDefinition } from '@/web/types';
+
 import type { BudgetItem } from '../../types';
 
 export const budgetItemColumnDefinitions: TableColumnDefinition<

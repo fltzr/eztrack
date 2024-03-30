@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { z } from 'zod';
 import Box from '@cloudscape-design/components/box';
 import Button from '@cloudscape-design/components/button';
 import Header from '@cloudscape-design/components/header';
 import Modal from '@cloudscape-design/components/modal';
 import SpaceBetween from '@cloudscape-design/components/space-between';
+import { useState } from 'react';
+import { z } from 'zod';
+
 import { GenericForm, FormInput } from '@/web/form';
 
 const DELETE_CONSENT_TEXT = 'confirm';

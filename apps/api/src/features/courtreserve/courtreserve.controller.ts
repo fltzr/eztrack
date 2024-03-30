@@ -1,7 +1,9 @@
 import { Request, Response, type NextFunction } from 'express';
+
+import { logger } from '@/api/core';
+
 import { fetchCourtreseveEvents, watchEventService } from './courtreserve.service';
 import { CourtreserveEventType } from './courtreserve.types';
-import { logger } from '@/api/core';
 
 export const eventsController = async (request: Request, response: Response) => {
   try {

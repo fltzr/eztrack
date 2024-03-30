@@ -1,3 +1,8 @@
+import Autosuggest, {
+  type AutosuggestProps,
+} from '@cloudscape-design/components/autosuggest';
+import FormField from '@cloudscape-design/components/form-field';
+import { useInfiniteQuery } from '@tanstack/react-query';
 import { useCallback, useMemo, useState } from 'react';
 import {
   Controller,
@@ -6,16 +11,13 @@ import {
   type Path,
 } from 'react-hook-form';
 import { useDebounce } from 'react-use';
-import { useInfiniteQuery } from '@tanstack/react-query';
-import Autosuggest, {
-  type AutosuggestProps,
-} from '@cloudscape-design/components/autosuggest';
-import FormField from '@cloudscape-design/components/form-field';
+
+import { FormBaseProps } from '../form-base-props';
+
 import {
   fetchSuggestions,
   type FetchSuggestionsResponse,
 } from './autosuggestions';
-import { FormBaseProps } from '../form-base-props';
 
 /**
  * Type definition for props accepted by the FormAutosuggest component.

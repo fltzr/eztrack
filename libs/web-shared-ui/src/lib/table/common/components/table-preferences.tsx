@@ -2,9 +2,10 @@ import {
   CollectionPreferences,
   type CollectionPreferencesProps,
 } from '@cloudscape-design/components';
+import capitalize from 'lodash-es/capitalize';
+
 import { useNotificationStore } from '@/web/state-management';
 import type { TableColumnDefinition } from '@/web/types';
-import capitalize from 'lodash-es/capitalize';
 
 // table-preferences
 export const createPageSizeOptions = (resource: string) => [

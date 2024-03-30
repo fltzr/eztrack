@@ -1,5 +1,17 @@
-import { fetchWithTypes } from '@/api/core';
-import { CourtreserveEventApiResponse, CourtreserveEventType } from './courtreserve.types';
+import { eq } from 'drizzle-orm';
+import { DateTime } from 'luxon';
+
+import { fetchWithTypes, logger, sendEmail } from '@/api/core';
+
+import { DrizzleInstance } from '../../database/drizzle';
+import {
+  courtreserveEventSubscriptions,
+  InsertCourtreserveEventSubscription,
+} from '../../database/schema/courtreserve-event-subscription';
+import { notifications, InsertNotification } from '../../database/schema/notification';
+import { users } from '../../database/schema/user';
+
+import type { CourtreserveEventApiResponse, CourtreserveEventType } from './courtreserve.types';
 import {
   filterEventsByDayOfWeek,
   filterEventsByEventId,
@@ -9,16 +21,6 @@ import {
   filterEventsByTimeDisplay,
   transformApiResponse,
 } from './courtreserve.utils';
-import { DrizzleInstance } from '../../database/drizzle';
-import {
-  courtreserveEventSubscriptions,
-  InsertCourtreserveEventSubscription,
-} from '../../database/schema/courtreserve-event-subscription';
-import { DateTime } from 'luxon';
-import { logger, sendEmail } from '@/api/core';
-import { users } from '../../database/schema/user';
-import { eq } from 'drizzle-orm';
-import { notifications, InsertNotification } from '../../database/schema/notification';
 
 export const fetchCourtreseveEvents = async (
   filters: {

@@ -1,6 +1,7 @@
-import { DrizzleInstance } from '../../core/database/drizzle';
-import { budgetItems } from '../../core/database/schema/finances-budget-item';
 import { eq } from 'drizzle-orm';
+
+import { DrizzleInstance } from '../../database/drizzle';
+import { budgetItems } from '../../database/schema/finances-budget-item';
 
 export const getUsersBudgetItemsService = async (userId: string) => {
   const db = DrizzleInstance();
@@ -44,10 +45,7 @@ export const deleteBudgetItemService = async (ids: string[]) => {
   const db = DrizzleInstance();
 
   ids.forEach(async (id) => {
-    await db
-      .update(budgetItems)
-      .set({ isDeleted: true })
-      .where(eq(budgetItems.id, id));
+    await db.update(budgetItems).set({ isDeleted: true }).where(eq(budgetItems.id, id));
   });
 };
 

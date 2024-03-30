@@ -1,8 +1,10 @@
 import { Outlet } from 'react-router-dom';
+
 import { useAuthInterceptor, useAuthStore } from '@/web/auth';
-import { Layout } from '@/web/ui';
-import { useUserPreferencesEffects } from '../common/hooks/use-user-preferences-effects';
 import { signout } from '@/web/auth';
+import { Layout } from '@/web/ui';
+
+import { useUserPreferencesEffects } from '../common/hooks/use-user-preferences-effects';
 
 export const App = () => {
   useAuthInterceptor();

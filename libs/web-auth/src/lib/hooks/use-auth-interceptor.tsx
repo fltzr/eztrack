@@ -1,7 +1,9 @@
+import type { AxiosError } from 'axios';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import type { AxiosError } from 'axios';
+
 import { api } from '@/web/utils';
+
 import { signout as signoutApi } from '../api';
 
 export const useAuthInterceptor = () => {

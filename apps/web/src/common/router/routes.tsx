@@ -1,9 +1,11 @@
 import { type RouteObject, createBrowserRouter } from 'react-router-dom';
-import { App } from '../../app';
+
 import { authRoutes, ProtectedRoute, UnprotectedRoute } from '@/web/auth';
-import { RouteError } from '@/web/ui';
 import { courtreserveRoutes } from '@/web/courtreserve';
 import { financesRoutes } from '@/web/finances-main';
+import { RouteError } from '@/web/ui';
+
+import { App } from '../../app';
 
 const routes: RouteObject[] = [
   {

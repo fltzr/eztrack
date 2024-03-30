@@ -1,10 +1,12 @@
 import { StrictMode, Suspense } from 'react';
-import { RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
-import { Loader } from '@/web/ui';
+import { RouterProvider } from 'react-router-dom';
+
 import { AuthWrapper } from '@/web/auth';
-import { router } from './common/router/routes';
+import { Loader } from '@/web/ui';
+
 import { Providers } from './app/providers';
+import { router } from './common/router/routes';
 
 import '@cloudscape-design/global-styles/index.css';
 import './index.css';

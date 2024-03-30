@@ -1,8 +1,6 @@
+import { applyMode as applyTheme, applyDensity } from '@cloudscape-design/global-styles';
 import { useEffect } from 'react';
-import {
-  applyMode as applyTheme,
-  applyDensity,
-} from '@cloudscape-design/global-styles';
+
 import { usePreferencesStore } from '@/web/state-management';
 
 export const useUserPreferencesEffects = () => {

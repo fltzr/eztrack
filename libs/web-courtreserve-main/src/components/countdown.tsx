@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
 import Box from '@cloudscape-design/components/box';
+import { useState, useEffect } from 'react';
+
 import { formatISODate } from '@/web/utils';
 
 export const Countdown = ({ isoDateTime }: { isoDateTime: string }) => {

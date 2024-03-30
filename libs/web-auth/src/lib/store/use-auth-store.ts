@@ -1,5 +1,7 @@
 import { create } from 'zustand';
+
 import { Account } from '@/web/types';
+
 import {
   checkAuth as checkAuthApi,
   signin as signinApi,

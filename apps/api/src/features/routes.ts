@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import { authRoutes } from './auth/auth.routes';
-import { financesRoutes } from './finances/finances.routes';
+
 import { authenticated } from '@/api/core';
+
+import { authRoutes } from './auth/auth.routes';
 import { courtReserveRoutes } from './courtreserve/courtreserve.routes';
+import { financesRoutes } from './finances/finances.routes';
 
 export const router = Router();
 
