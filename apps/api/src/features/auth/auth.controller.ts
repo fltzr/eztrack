@@ -2,8 +2,8 @@ import { Request, Response, NextFunction } from 'express';
 import { compare, hash } from 'bcrypt';
 import { eq } from 'drizzle-orm';
 import { AuthApiResponse } from '@/shared/api-types';
-import { DrizzleInstance } from '../../core/database/drizzle';
-import { users } from '../../core/database/schema/user';
+import { DrizzleInstance } from '../../database/drizzle';
+import { users } from '../../database/schema/user';
 import { logger } from '@/api/core';
 
 export const pageloadController = async (

@@ -9,16 +9,16 @@ import {
   filterEventsByTimeDisplay,
   transformApiResponse,
 } from './courtreserve.utils';
-import { DrizzleInstance } from '../../core/database/drizzle';
+import { DrizzleInstance } from '../../database/drizzle';
 import {
   courtreserveEventSubscriptions,
   InsertCourtreserveEventSubscription,
-} from '../../core/database/schema/courtreserve-event-subscription';
+} from '../../database/schema/courtreserve-event-subscription';
 import { DateTime } from 'luxon';
 import { logger, sendEmail } from '@/api/core';
-import { users } from '../../core/database/schema/user';
+import { users } from '../../database/schema/user';
 import { eq } from 'drizzle-orm';
-import { notifications, InsertNotification } from '../../core/database/schema/notification';
+import { notifications, InsertNotification } from '../../database/schema/notification';
 
 export const fetchCourtreseveEvents = async (
   filters: {

@@ -9,7 +9,7 @@ import session from 'express-session';
 import connectPgSimple from 'connect-pg-simple';
 
 import { env, logger, stream, initializeOpenIDConnectClient } from '@/api/core';
-import { PostgresqlPool, initializeDrizzleInstance } from './core/database/drizzle';
+import { PostgresqlPool, initializeDrizzleInstance } from './database/drizzle';
 import { router } from './features/routes';
 // import { notificationCron } from '@features/notifications/notification.service';
 
