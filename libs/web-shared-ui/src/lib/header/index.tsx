@@ -3,11 +3,10 @@ import { useState, type PropsWithChildren } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 import TopNavigation, { TopNavigationProps } from '@cloudscape-design/components/top-navigation';
-import { useAuthStore } from '@/web/auth';
 import { useNotificationStore } from '@/web/state-management';
 import { UserPreferencesModal } from './preferences-modal/index';
-import { api } from '@/web/utils';
 import styles from './styles.module.css';
+import { Account } from '@/web/types';
 
 const HeaderPortal = ({ children }: PropsWithChildren) => {
   const dom = document.querySelector('#h');
@@ -19,15 +18,15 @@ const HeaderPortal = ({ children }: PropsWithChildren) => {
   return createPortal(children, dom);
 };
 
-export const Header = () => {
+type HeaderProps = {
+  user: Account | null;
+  signoutFn: () => Promise<void>;
+};
+
+export const Header = ({ user, signoutFn }: HeaderProps) => {
+  const authenticated = Boolean(user);
   const navigate = useNavigate();
-
-  const authenticated = Boolean(useAuthStore((s) => s.user));
-  const user = useAuthStore((s) => s.user);
-  const signout = useAuthStore((s) => s.signout);
-
   const addNotification = useNotificationStore((state) => state.addNotification);
-
   const [userPreferencesModalOpen, setUserPreferencesModalOpen] = useState(false);
 
   const utilityItems: TopNavigationProps['utilities'] =
@@ -57,7 +56,7 @@ export const Header = () => {
               console.log(event.detail.id);
             }
             (async () => {
-              await signout();
+              await signoutFn();
 
               navigate('/signin', {
                 replace: true,

@@ -1,13 +1,17 @@
 import type { PropsWithChildren } from 'react';
 import AppLayout from '@cloudscape-design/components/app-layout';
-import { useAuthStore } from '@/web/auth';
 import { useLayoutStore } from '@/web/state-management';
 import { Header } from './header/index';
 import { Navigation } from './navigation';
 import { Notification } from './notification';
+import { Account } from '@/web/types';
 
-const Layout = ({ children }: PropsWithChildren) => {
-  const user = useAuthStore((s) => s.user);
+type LayoutProps = {
+  user: Account | null;
+  signoutFn: () => Promise<void>;
+} & PropsWithChildren;
+
+export const Layout = ({ user, signoutFn, children }: LayoutProps) => {
   const { navigationHidden, navigationOpen, toolsHidden, toolsOpen, setState } = useLayoutStore((s) => ({
     navigationHidden: s.navigationHidden,
     navigationOpen: s.navigationOpen,
@@ -18,7 +22,7 @@ const Layout = ({ children }: PropsWithChildren) => {
 
   return (
     <>
-      <Header />
+      <Header user={user} signoutFn={signoutFn} />
       <AppLayout
         content={children}
         headerSelector='#h'
@@ -39,5 +43,3 @@ const Layout = ({ children }: PropsWithChildren) => {
     </>
   );
 };
-
-export default Layout;

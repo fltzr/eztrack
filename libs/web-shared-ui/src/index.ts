@@ -1,3 +1,5 @@
+export { Header } from './lib/header';
+export { Layout } from './lib/layout';
 export { Loader } from './lib/loader';
 export { InfoLink } from './lib/info-link';
 export { KeyValuePair } from './lib/key-value-pair';
