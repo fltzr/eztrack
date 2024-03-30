@@ -1,4 +1,5 @@
 export { useAuthStore } from './lib/store/use-auth-store';
+export { signout } from './lib/api';
 
 export { useAuthCheck } from './lib/hooks/use-auth-check';
 export { useAuthInterceptor } from './lib/hooks/use-auth-interceptor';
