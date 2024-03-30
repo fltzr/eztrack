@@ -1,4 +1,4 @@
-import { fetchWithTypes } from '../../core/utils/typesafe-fetch';
+import { fetchWithTypes } from '@/api/core';
 import { CourtreserveEventApiResponse, CourtreserveEventType } from './courtreserve.types';
 import {
   filterEventsByDayOfWeek,
@@ -15,7 +15,7 @@ import {
   InsertCourtreserveEventSubscription,
 } from '../../core/database/schema/courtreserve-event-subscription';
 import { DateTime } from 'luxon';
-import { logger } from '../../core/utils/winston-logger';
+import { logger } from '@/api/core';
 import { sendEmail } from '../../core/utils/node-mailer';
 import { users } from '../../core/database/schema/user';
 import { eq } from 'drizzle-orm';

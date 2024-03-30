@@ -1,5 +1,5 @@
 import { fetchAndDispatchEventSubscriptions } from '../courtreserve/courtreserve.service';
-import { logger } from '../../core/utils/winston-logger';
+import { logger } from '@/api/core';
 import cron from 'node-cron';
 
 // Run every minute

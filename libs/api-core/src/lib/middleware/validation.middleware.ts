@@ -5,8 +5,7 @@ import { z } from 'zod';
 import { logger } from '../utils/winston-logger';
 
 export const validate =
-  (schema: z.ZodSchema) =>
-  (request: Request, response: Response, next: NextFunction) => {
+  (schema: z.ZodSchema) => (request: Request, response: Response, next: NextFunction) => {
     try {
       schema.parse(request.body);
       next();

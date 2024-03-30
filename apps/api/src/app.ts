@@ -9,7 +9,7 @@ import session from 'express-session';
 import connectPgSimple from 'connect-pg-simple';
 
 import { env } from './core/config/index';
-import { logger, stream } from './core/utils/winston-logger';
+import { logger, stream } from '@/api/core';
 import { initializeOpenIDConnectClient } from './core/utils/oidc-client';
 import { PostgresqlPool, initializeDrizzleInstance } from './core/database/drizzle';
 import { router } from './features/routes';

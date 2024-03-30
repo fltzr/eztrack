@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@/api/core": ["libs/api-core/src/index.ts"],
       "@/shared/api-types": ["libs/shared-api-types/src/index.ts"],
       "@/web/auth": ["libs/web-auth/src/index.ts"],
       "@/web/courtreserve": ["libs/web-courtreserve-main/src/index.ts"],

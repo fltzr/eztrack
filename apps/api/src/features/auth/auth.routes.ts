@@ -6,7 +6,7 @@ import {
   signoutController,
   userinfoController,
 } from './auth.controller';
-import { validate } from '../../core/middleware/validation.middleware';
+import { validate } from '@/api/core';
 import { signinSchema, signupSchema } from './auth.zschema';
 
 export const authRoutes = Router();

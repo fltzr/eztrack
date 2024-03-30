@@ -4,7 +4,7 @@ import { eq } from 'drizzle-orm';
 import { AuthApiResponse } from '@/shared/api-types';
 import { DrizzleInstance } from '../../core/database/drizzle';
 import { users } from '../../core/database/schema/user';
-import { logger } from '../../core/utils/winston-logger';
+import { logger } from '@/api/core';
 
 export const pageloadController = async (
   request: Request,

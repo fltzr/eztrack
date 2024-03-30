@@ -2,10 +2,9 @@ import { existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import winston from 'winston';
 import winstonDaily from 'winston-daily-rotate-file';
-import { env } from '../config/index';
 
 // logs dir
-const logDir: string = join(__dirname, env.LOG_DIR);
+const logDir: string = join(__dirname, '../../../../logs');
 
 if (!existsSync(logDir)) {
   mkdirSync(logDir);
@@ -55,10 +54,7 @@ const logger = winston.createLogger({
 
 logger.add(
   new winston.transports.Console({
-    format: winston.format.combine(
-      winston.format.splat(),
-      winston.format.colorize(),
-    ),
+    format: winston.format.combine(winston.format.splat(), winston.format.colorize()),
   }),
 );
 

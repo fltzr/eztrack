@@ -1,5 +1,5 @@
 import { createApplicaton } from './app';
-import { logger } from './core/utils/winston-logger';
+import { logger } from '@/api/core';
 import { env } from './core/config';
 import { closeDrizzleInstance } from './core/database/drizzle';
 

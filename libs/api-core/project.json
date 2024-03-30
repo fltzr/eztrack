@@ -1,0 +1,19 @@
+{
+  "name": "api-core",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api-core/src",
+  "projectType": "library",
+  "tags": ["scope:api"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api-core",
+        "tsConfig": "libs/api-core/tsconfig.lib.json",
+        "packageJson": "libs/api-core/package.json",
+        "main": "libs/api-core/src/index.ts"
+      }
+    }
+  }
+}
