@@ -3,9 +3,7 @@ import { cleanEnv, bool, port, str, url } from 'envalid';
 import { resolve } from 'path';
 import { cwd } from 'process';
 
-console.info(`cwd: ${cwd()}`);
-
-config({ path: resolve(cwd(), '.env.local'), debug: true });
+config({ path: resolve(cwd(), '.env.local') });
 
 export const env = cleanEnv(process.env, {
   // General configuration
@@ -45,7 +43,3 @@ export const env = cleanEnv(process.env, {
   COURTRESERVE_API_NEWRELIC: str(),
   'COURTRESERVE_API_X-NEWRELIC-ID': str(),
 });
-
-if (env.isDev) {
-  console.table(env);
-}
