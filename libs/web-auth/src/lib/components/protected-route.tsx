@@ -4,13 +4,13 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 export const ProtectedRoute = () => {
   console.log('ProtectedRoute');
-  const authenticated = useAuthStore((s) => s.authenticated);
+  const { authenticated, user } = useAuthStore();
 
   if (authenticated === null) {
     return <Loader />;
   }
 
-  if (!authenticated) {
+  if (!authenticated && !user) {
     return <Navigate to='/' />;
   }
 
