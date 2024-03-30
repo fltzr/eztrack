@@ -1,0 +1,46 @@
+:root {
+  --splash-header-color: -webkit-linear-gradient(to right, #17bab7 50%, #47caff 50%);
+  --splash-background-color: linear-gradient(-45deg, #17bab7 50%, #47caff 50%);
+}
+
+.splash-main {
+  padding: 80px 64px 64px;
+
+  .splash-container {
+    margin: 0 auto;
+  }
+}
+
+.splash-header {
+  font-size: 56px;
+  background: var(--splash-header-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background-image: var(--splash-background-color);
+    transform: translate(-50%, -50%);
+    filter: blur(72px);
+  }
+
+  img {
+    z-index: 1;
+    max-width: 320px;
+    max-height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}

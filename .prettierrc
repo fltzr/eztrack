@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "experimentalTernaries": true,
+  "jsxSingleQuote": true,
+  "printWidth": 105
+}

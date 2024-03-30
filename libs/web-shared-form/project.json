@@ -1,0 +1,9 @@
+{
+  "name": "web-shared-form",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web-shared-form/src",
+  "projectType": "library",
+  "tags": ["scope:web"],
+  "// targets": "to see all targets run: nx show project web-shared-form --web",
+  "targets": {}
+}

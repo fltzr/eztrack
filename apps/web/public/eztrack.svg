@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="26px" viewBox="0 0 30 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Untitled</title>
+    <defs>
+        <text id="text-1" font-family="MonaspaceRadon-SemiWideExtraLightItalic, Monaspace Radon" font-size="48" font-style="italic" font-weight="normal" fill="#697FF9">
+            <tspan x="0" y="38">e</tspan>
+        </text>
+        <filter x="-8.8%" y="-6.2%" width="117.6%" height="112.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.235155056   0 0 0 0 0.452767662   0 0 0 0 0.840777853  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M29.6519197,28.9441809 L25.6166296,29.5993769 C25.4530859,29.6259309 25.3420338,29.7800356 25.3685878,29.9435793 C25.3795161,30.0108859 25.4130476,30.0724615 25.4636569,30.1181595 L29.498947,33.761856 C29.621919,33.8728945 29.811622,33.8632205 29.9226605,33.7402485 C29.9724421,33.6851168 30,33.6134768 30,33.5391955 L30,29.240303 C30,29.0746176 29.8656854,28.940303 29.7,28.940303 C29.6838951,28.940303 29.6678164,28.9415998 29.6519197,28.9441809 Z" id="path-3"></path>
+        <filter x="-52.7%" y="-55.3%" width="212.7%" height="204.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.235155056   0 0 0 0 0.452767662   0 0 0 0 0.840777853  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-1, -13)">
+            <g id="e" fill-rule="nonzero" fill="#697FF9" fill-opacity="1">
+                <use filter="url(#filter-2)" xlink:href="#text-1"></use>
+                <use xlink:href="#text-1"></use>
+            </g>
+            <g id="Path">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <use fill="#697FF9" fill-rule="evenodd" xlink:href="#path-3"></use>
+            </g>
+            <path d="M24.3513262,35.2142855 C27.4696491,33.4081203 29.1279881,32.0747869 28.9643638,31.2142855" id="Path-2" stroke="#697FF9"></path>
+            <path d="M23.988675,34.2142855 C27.5544411,32.4081203 29.213004,31.0747869 28.9643638,30.2142855" id="Path-2" stroke="#697FF9"></path>
+            <path d="M23.9166905,33.6124351 C26.7942348,32.0201727 27.7959033,30.692853 27.2882236,30.0086097" id="Path-2" stroke="#697FF9"></path>
+        </g>
+    </g>
+</svg>

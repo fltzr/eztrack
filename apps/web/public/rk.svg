@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="48px" viewBox="0 0 52 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Untitled</title>
+    <defs>
+        <filter x="-3.1%" y="-4.1%" width="107.9%" height="107.1%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" filter="url(#filter-1)" transform="translate(0.5042, 2.089)" fill="#697FF9">
+            <path d="M46.7899081,10.0364198 L40.8421414,11.1556429 C40.6793138,11.186283 40.5721546,11.3431197 40.6027948,11.5059473 C40.6166035,11.5793294 40.6572819,11.6449243 40.7168791,11.6899107 L47.1054481,16.5122726 C47.2376884,16.6120932 47.425811,16.5858118 47.5256316,16.4535715 C47.5695244,16.3954232 47.5907573,16.3232894 47.5853671,16.2506345 L47.1445648,10.3090496 C47.1323064,10.1438182 46.9884225,10.0198092 46.8231912,10.0320676 C46.8120243,10.032896 46.8009125,10.0343491 46.7899081,10.0364198 Z" id="Path" transform="translate(43.9049, 13.443) rotate(11) translate(-43.9049, -13.443)"></path>
+            <path d="M40.3674573,14.2869199 C40.3674573,14.2869199 40.3674573,14.2869199 40.3674573,14.2869199 C40.4696756,14.2248435 40.579213,14.1648974 40.676285,14.1020092 C41.1652745,13.7852168 41.7645056,13.2975529 42.1227573,13.0029863 C42.5502112,12.6515193 42.8886402,12.3454532 43.1350221,12.0792569 C43.3094777,11.8907713 43.5324047,11.6834482 43.6519676,11.5670069 L46.2315852,14.0194389 C46.0005205,14.4714971 45.2386768,15.1913424 44.8724236,15.5480335 C44.4677572,15.9421348 43.1133153,16.85109 42.248951,17.4846793 C42.248951,17.4846793 42.248951,17.4846793 42.248951,17.4846793 C42.2431279,17.4889477 42.2349616,17.4877828 42.2305641,17.4820565 L40.2517037,14.9051996 C40.1096245,14.7201844 40.144431,14.4550218 40.3294463,14.3129426 C40.3416338,14.3035834 40.354323,14.2948962 40.3674573,14.2869199 Z" id="Rectangle" transform="translate(42.9803, 14.5694) scale(-1, -1) rotate(11) translate(-42.9803, -14.5694)"></path>
+            <text id="R" fill-rule="nonzero" font-family="MonaspaceRadon-Italic, Monaspace Radon" font-size="48" font-style="italic" font-weight="normal">
+                <tspan x="0" y="39.9109638">R</tspan>
+            </text>
+            <text id="k" fill-rule="nonzero" transform="translate(29.5, 24.911) rotate(-5) translate(-29.5, -24.911)" font-family="MonaspaceRadon-Italic, Monaspace Radon" font-size="48" font-style="italic" font-weight="normal">
+                <tspan x="18" y="38.9109638">k</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

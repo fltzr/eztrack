@@ -1,0 +1,9 @@
+{
+  "name": "web-courtreserve-main",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/web-courtreserve-main/src",
+  "projectType": "library",
+  "tags": ["scope:web"],
+  "// targets": "to see all targets run: nx show project web-courtreserve-main --web",
+  "targets": {}
+}
