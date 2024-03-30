@@ -15,8 +15,7 @@ import {
   InsertCourtreserveEventSubscription,
 } from '../../core/database/schema/courtreserve-event-subscription';
 import { DateTime } from 'luxon';
-import { logger } from '@/api/core';
-import { sendEmail } from '../../core/utils/node-mailer';
+import { logger, sendEmail } from '@/api/core';
 import { users } from '../../core/database/schema/user';
 import { eq } from 'drizzle-orm';
 import { notifications, InsertNotification } from '../../core/database/schema/notification';

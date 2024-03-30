@@ -8,9 +8,7 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import connectPgSimple from 'connect-pg-simple';
 
-import { env } from './core/config/index';
-import { logger, stream } from '@/api/core';
-import { initializeOpenIDConnectClient } from './core/utils/oidc-client';
+import { env, logger, stream, initializeOpenIDConnectClient } from '@/api/core';
 import { PostgresqlPool, initializeDrizzleInstance } from './core/database/drizzle';
 import { router } from './features/routes';
 // import { notificationCron } from '@features/notifications/notification.service';
