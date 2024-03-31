@@ -1,15 +1,17 @@
 import { eq } from 'drizzle-orm';
 import { DateTime } from 'luxon';
 
-import { fetchWithTypes, logger, sendEmail } from '@/api/core';
-
-import { DrizzleInstance } from '../../database/drizzle';
 import {
+  DrizzleInstance,
+  fetchWithTypes,
+  logger,
+  sendEmail,
   courtreserveEventSubscriptions,
   InsertCourtreserveEventSubscription,
-} from '../../database/schema/courtreserve-event-subscription';
-import { notifications, InsertNotification } from '../../database/schema/notification';
-import { users } from '../../database/schema/user';
+  users,
+  notifications,
+  InsertNotification,
+} from '@/api/core';
 
 import type { CourtreserveEventApiResponse, CourtreserveEventType } from './courtreserve.types';
 import {

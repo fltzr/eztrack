@@ -8,9 +8,15 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
 
-import { env, logger, stream, initializeOpenIDConnectClient } from '@/api/core';
+import {
+  env,
+  logger,
+  stream,
+  initializeOpenIDConnectClient,
+  PostgresqlPool,
+  initializeDrizzleInstance,
+} from '@/api/core';
 
-import { PostgresqlPool, initializeDrizzleInstance } from './database/drizzle';
 import { router } from './features/routes';
 // import { notificationCron } from '@features/notifications/notification.service';
 

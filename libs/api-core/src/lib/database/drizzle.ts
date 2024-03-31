@@ -1,7 +1,7 @@
 import { NodePgDatabase, drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
 
-import { env } from '@/api/core';
+import { env } from '../config';
 
 import { courtreserveEventSubscriptions } from './schema/courtreserve-event-subscription';
 import { budgetItems } from './schema/finances-budget-item';

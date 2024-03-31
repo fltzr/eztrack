@@ -2,10 +2,7 @@ import { compare, hash } from 'bcrypt';
 import { eq } from 'drizzle-orm';
 import { Request, Response, NextFunction } from 'express';
 
-import { logger } from '@/api/core';
-
-import { DrizzleInstance } from '../../database/drizzle';
-import { users } from '../../database/schema/user';
+import { DrizzleInstance, users, logger } from '@/api/core';
 
 import { AuthApiResponse } from '@/shared/api-types';
 

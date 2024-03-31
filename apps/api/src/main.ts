@@ -1,7 +1,6 @@
-import { env, logger } from '@/api/core';
+import { env, logger, closeDrizzleInstance } from '@/api/core';
 
 import { createApplicaton } from './app';
-import { closeDrizzleInstance } from './database/drizzle';
 
 const startServer = async () => {
   try {

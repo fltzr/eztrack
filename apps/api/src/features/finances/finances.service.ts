@@ -1,7 +1,6 @@
 import { eq } from 'drizzle-orm';
 
-import { DrizzleInstance } from '../../database/drizzle';
-import { budgetItems } from '../../database/schema/finances-budget-item';
+import { DrizzleInstance, budgetItems } from '@/api/core';
 
 export const getUsersBudgetItemsService = async (userId: string) => {
   const db = DrizzleInstance();

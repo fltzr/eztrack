@@ -1,6 +1,26 @@
 // Env
 export { env } from './lib/config';
 
+// Database
+export {
+  initializeDrizzleInstance,
+  PostgresqlPool,
+  DrizzleInstance,
+  closeDrizzleInstance,
+} from './lib/database/drizzle';
+export { users, SelectUser, InsertUser } from './lib/database/schema/user';
+export { notifications, InsertNotification } from './lib/database/schema/notification';
+export {
+  budgetItems,
+  SelectBudgetItem,
+  InsertBudgetItem,
+} from './lib/database/schema/finances-budget-item';
+export {
+  courtreserveEventSubscriptions,
+  SelectCourtreserveEventSubscription,
+  InsertCourtreserveEventSubscription,
+} from './lib/database/schema/courtreserve-event-subscription';
+
 // Exceptions
 export { HttpException } from './lib/exceptions/http-exception';
 
