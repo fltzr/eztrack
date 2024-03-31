@@ -1,0 +1,20 @@
+{
+  "name": "api-finances",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api-finances/src",
+  "projectType": "library",
+  "tags": ["scope:api"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api-finances",
+        "tsConfig": "libs/api-finances/tsconfig.lib.json",
+        "packageJson": "libs/api-finances/package.json",
+        "main": "libs/api-finances/src/index.ts",
+        "assets": ["libs/api-finances/*.md"]
+      }
+    }
+  }
+}

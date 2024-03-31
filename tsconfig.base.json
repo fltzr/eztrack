@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@/api/auth": ["libs/api-auth/src/index.ts"],
       "@/api/core": ["libs/api-core/src/index.ts"],
+      "@/api/courtreserve": ["libs/api-courtreserve/src/index.ts"],
+      "@/api/finances": ["libs/api-finances/src/index.ts"],
+      "@/api/notifications": ["libs/api-notifications/src/index.ts"],
       "@/shared/api-types": ["libs/shared-api-types/src/index.ts"],
       "@/web/auth": ["libs/web-auth/src/index.ts"],
       "@/web/courtreserve": ["libs/web-courtreserve-main/src/index.ts"],

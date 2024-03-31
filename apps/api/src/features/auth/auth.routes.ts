@@ -11,7 +11,7 @@ import {
 } from './auth.controller';
 import { signinSchema, signupSchema } from './auth.zschema';
 
-export const authRoutes = Router();
+export const authRoutes: Router = Router();
 
 authRoutes
   .post('/pageload', pageloadController)

@@ -3,7 +3,7 @@ import { query } from 'express-validator';
 
 import { eventsController, watchEventController } from './courtreserve.controller';
 
-export const courtReserveRoutes = Router();
+export const courtReserveRoutes: Router = Router();
 
 courtReserveRoutes
   .get(

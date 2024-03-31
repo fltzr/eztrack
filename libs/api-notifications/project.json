@@ -1,0 +1,20 @@
+{
+  "name": "api-notifications",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api-notifications/src",
+  "projectType": "library",
+  "tags": ["scope:api"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api-notifications",
+        "tsConfig": "libs/api-notifications/tsconfig.lib.json",
+        "packageJson": "libs/api-notifications/package.json",
+        "main": "libs/api-notifications/src/index.ts",
+        "assets": ["libs/api-notifications/*.md"]
+      }
+    }
+  }
+}

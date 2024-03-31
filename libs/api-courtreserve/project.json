@@ -1,0 +1,20 @@
+{
+  "name": "api-courtreserve",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api-courtreserve/src",
+  "projectType": "library",
+  "tags": ["scope:api"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api-courtreserve",
+        "tsConfig": "libs/api-courtreserve/tsconfig.lib.json",
+        "packageJson": "libs/api-courtreserve/package.json",
+        "main": "libs/api-courtreserve/src/index.ts",
+        "assets": ["libs/api-courtreserve/*.md"]
+      }
+    }
+  }
+}
