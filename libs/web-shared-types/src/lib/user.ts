@@ -5,7 +5,7 @@ export type Account = {
   firstName: string;
   lastName: string;
   birthDate: string;
-  gender: string;
+  gender: string | null;
   zipCode: string;
   createdAt: string | Date;
   updatedAt: string | Date;

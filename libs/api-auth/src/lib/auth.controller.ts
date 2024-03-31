@@ -1,10 +1,11 @@
 import { compare, hash } from 'bcrypt';
 import { eq } from 'drizzle-orm';
 import { Request, Response, NextFunction } from 'express';
+import { DatabaseError } from 'pg';
 
 import { DrizzleInstance, users, logger } from '@/api/core';
 
-import { AuthApiResponse } from '@/shared/api-types';
+import { AuthApiResponse } from '@/shared/types';
 
 export const pageloadController = async (
   request: Request,
@@ -44,8 +45,16 @@ export const pageloadController = async (
       user: userWithoutPassword,
     });
   } catch (error) {
+    if (error instanceof DatabaseError) {
+      return response.status(500).json({
+        authenticated: false,
+        user: null,
+        message: 'Database error',
+      });
+    }
+
     logger.error(error);
-    next(error);
+    return next(error);
   }
 };
 
@@ -133,9 +142,20 @@ export const signupController = async (
     });
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { password: _, ...userWithoutPassword } = await db.query.users.findFirst({
+    const userQuery = await db.query.users.findFirst({
       where: eq(users.username, username),
     });
+
+    if (!userQuery) {
+      return response.status(400).json({
+        authenticated: false,
+        user: null,
+        message: 'User not found',
+      });
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { password: _, ...userWithoutPassword } = userQuery;
 
     return response.status(201).json({
       authenticated: true,
@@ -145,7 +165,7 @@ export const signupController = async (
     logger.error(error);
 
     // Duploicate key value violates unique constraint
-    if (error?.code === '23505') {
+    if (error instanceof DatabaseError && error?.code === '23505') {
       return response.status(409).json({
         authenticated: false,
         user: null,
@@ -196,6 +216,14 @@ export const userinfoController = async (
 ) => {
   try {
     const uid = request.session.userid;
+
+    if (!uid) {
+      return response.status(400).json({
+        authenticated: false,
+        user: null,
+        message: 'No user id found in session',
+      });
+    }
 
     const db = DrizzleInstance();
 

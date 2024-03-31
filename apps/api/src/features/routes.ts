@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
+import { authRoutes } from '@/api/auth';
 import { authenticated } from '@/api/core';
 
-import { authRoutes } from './auth/auth.routes';
 import { courtReserveRoutes } from './courtreserve/courtreserve.routes';
 import { financesRoutes } from './finances/finances.routes';
 
