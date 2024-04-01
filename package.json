@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "build": "NODE_ENV=production nx run-many -t build -p web api",
     "build:api": "NODE_ENV=production nx run api:build",
     "build:web": "NODE_ENV=production nx run web:build",
@@ -13,10 +14,9 @@
     "drizzle:generate": "drizzle-kit generate:pg --config ./apps/api/drizzle.config.ts",
     "drizzle:push": "node -r esbuild-register ./apps/api/migrations.ts",
     "drizzle:migrate": "npm run drizzle:generate && npm run drizzle:push",
-    "preinstall": "npx only-allow pnpm",
+    "build:web:prod": "NODE_ENV=production nx run web:build",
     "start": "NODE_ENV=production nx run-many -t preview -p web api",
-    "start:web": "nx run web:preview",
-    "update": "npx npm-check-updates -u && npm i --force"
+    "start:web": "nx run web:preview"
   },
   "dependencies": {
     "@aws-sdk/client-ses": "^3.540.0",

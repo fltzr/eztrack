@@ -1,0 +1,17 @@
+docs/*
+tmp/*
+**/node_modules/*
+**/dist/*
+
+# Ignore git and cache files
+.git
+.gitignore
+__pycache__
+
+# Ignore log files
+*.log
+
+# Ignore OS generated files
+.DS_Store
+ehthumbs.db
+Thumbs.db
