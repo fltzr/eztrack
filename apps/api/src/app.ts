@@ -15,6 +15,7 @@ import {
   initializeOpenIDConnectClient,
   PostgresqlPool,
   initializeDrizzleInstance,
+  requireHttps,
 } from '@/api/core';
 
 import { router } from './features/routes';
@@ -50,11 +51,13 @@ export const createApplicaton = async () => {
 };
 
 const initializeMiddleware = (app: Application) => {
+  app.use(requireHttps);
   app.use(morgan('dev', { stream }));
   app.use(
     cors({
       origin: env.ORIGIN,
       credentials: true,
+      optionsSuccessStatus: 200,
     }),
   );
   app.use(hpp());
