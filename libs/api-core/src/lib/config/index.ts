@@ -16,6 +16,10 @@ export const env = cleanEnv(process.env, {
   ORIGIN: url(),
   CREDENTIALS: bool({ default: true }),
 
+  // SSL configuration
+  SSL_CERT_PATH: str(),
+  SSL_KEY_PATH: str(),
+
   // PostgreSQL configuration
   POSTGRESQL_DATABASE_URL: url(),
 

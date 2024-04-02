@@ -14,6 +14,7 @@ export * from './lib/exceptions/http-exception';
 // Middleware
 export * from './lib/middleware/authenticated.middleware';
 export * from './lib/middleware/error.middleware';
+export * from './lib/middleware/require-https.middleware';
 export * from './lib/middleware/logger.middleware';
 export * from './lib/middleware/validation.middleware';
 
