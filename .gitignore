@@ -1,8 +1,16 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Cert paths
+certs
+
+# env files
+**/.env*
+!**/.env.template
+
 # compiled output
 dist
 tmp
+.nx/cache
 /out-tsc
 
 # dependencies
@@ -37,6 +45,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-.nx/cache
-.env.local
